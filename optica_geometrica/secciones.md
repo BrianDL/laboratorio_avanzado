@@ -4,4 +4,4 @@ Marco teórico
 Diseño experimental
 Resultados y discusión
 Conclusiones
-Referencia
+Referencias

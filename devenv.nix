@@ -5,7 +5,9 @@
   # env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = with pkgs; [
+    git entr findutils
+  ];
 
   # https://devenv.sh/languages/
   languages.texlive = {
@@ -21,14 +23,24 @@
   # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
-  # scripts.hello.exec = ''
-  #   echo hello from $GREET
-  # '';
+    scripts.watch-latex.exec = ''
+      #!/usr/bin/env bash
+      if [ $# -eq 0 ]; then
+        echo "Usage: $0 <project-directory>"
+        exit 1
+      fi
 
-  # enterShell = ''
-  #   hello
-  #   git --version
-  # '';
+      PROJECT_DIR="$1"
+      MAIN_TEX="$PROJECT_DIR/main.tex"
+
+      if [ ! -f "$MAIN_TEX" ]; then
+        echo "Error: main.tex not found in $PROJECT_DIR"
+        exit 1
+      fi
+
+      echo "Watching LaTeX files in $PROJECT_DIR..."
+      find "$PROJECT_DIR" -name "*.tex" -or -name "*.bib" | entr -s "pdflatex -interaction=nonstopmode -output-directory=$PROJECT_DIR $MAIN_TEX && echo 'Compilation completed.'"
+    '';
 
   # https://devenv.sh/tasks/
   # tasks = {
