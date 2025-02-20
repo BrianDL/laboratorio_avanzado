@@ -32,6 +32,7 @@
 
       PROJECT_DIR="$1"
       MAIN_TEX="$PROJECT_DIR/main.tex"
+      MAIN_NAME=$(basename "$MAIN_TEX" .tex)
 
       if [ ! -f "$MAIN_TEX" ]; then
         echo "Error: main.tex not found in $PROJECT_DIR"
@@ -39,7 +40,7 @@
       fi
 
       echo "Watching LaTeX files in $PROJECT_DIR..."
-      find "$PROJECT_DIR" -name "*.tex" -or -name "*.bib" | entr -s "pdflatex -interaction=nonstopmode -output-directory=$PROJECT_DIR $MAIN_TEX && echo 'Compilation completed.'"
+      find "$PROJECT_DIR" -name "*.tex" -or -name "*.bib" | entr -s "cd $PROJECT_DIR && pdflatex -interaction=nonstopmode $MAIN_NAME && bibtex $MAIN_NAME && pdflatex -interaction=nonstopmode $MAIN_NAME && pdflatex -interaction=nonstopmode $MAIN_NAME && echo 'Compilation completed.'"
     '';
 
   # https://devenv.sh/tasks/
