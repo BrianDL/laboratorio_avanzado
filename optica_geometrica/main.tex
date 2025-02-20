@@ -131,6 +131,44 @@ Este valor de distancia focal es consistente con el valor nominal de 100 mm indi
 
 La concordancia entre el valor calculado y el valor nominal de la lente proporciona una fuerte evidencia de la validez de la ecuación de lentes delgadas en nuestras condiciones experimentales. Además, demuestra la eficacia de nuestro método para determinar la distancia focal de una lente convergente utilizando mediciones de las distancias objeto-lente e imagen-lente.
 
+Para analizar la magnificación, comparamos los valores teóricos con los experimentales. La Tabla 2 muestra esta comparación:
+
+\begin{table}[h]
+\centering
+\caption{Comparación de magnificación teórica y experimental}
+\label{tab:magnificacion}
+\begin{tabular}{|c|c|c|}
+\hline
+$h_i$ (cm) & $M_t \pm \Delta M_t$ & $M_e \pm \Delta M_e$ \\
+\hline
+2.79 & -2.68 $\pm$ 0.32 & -2.18 $\pm$ 0.01 \\
+3.52 & -3.17 $\pm$ 0.29 & -2.75 $\pm$ 0.01 \\
+4.28 & -3.78 $\pm$ 0.29 & -3.34 $\pm$ 0.01 \\
+4.78 & -4.45 $\pm$ 0.31 & -3.73 $\pm$ 0.01 \\
+\hline
+\end{tabular}
+\end{table}
+
+Donde $M_t$ es la magnificación teórica calculada usando la ecuación 2: $M_t = -s_i/s_o$, y $M_e$ es la magnificación experimental obtenida dividiendo $h_i$ por la altura original del objeto, que es 1.28 cm.
+
+La incertidumbre en la magnificación teórica ($\Delta M_t$) se calculó utilizando la propagación de errores:
+
+\begin{equation}
+\Delta M_t = |M_t| \sqrt{(\frac{\Delta t}{s_i})^2 + (\frac{\Delta t}{s_o})^2}
+\end{equation}
+
+Donde $\Delta t$ es la incertidumbre total de la medición para cada configuración, como se muestra en la Tabla 1.
+
+La incertidumbre en la magnificación experimental ($\Delta M_e$) se calculó considerando la incertidumbre en la medición de la altura de la imagen y del objeto:
+
+\begin{equation}
+\Delta M_e = |M_e| \sqrt{(\frac{0.01}{h_i})^2 + (\frac{0.01}{1.28})^2}
+\end{equation}
+
+Donde 0.01 cm es la incertidumbre en la medición de las alturas.
+
+Como se puede observar, hay una concordancia general entre los valores teóricos ($M_t$) y experimentales ($M_e$) de la magnificación, aunque existen discrepancias que son más significativas cuando se consideran las incertidumbres experimentales.
+
 \section{Conclusiones}
 
 A partir de los resultados obtenidos en nuestro experimento sobre óptica geométrica, podemos extraer las siguientes conclusiones:
