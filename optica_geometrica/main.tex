@@ -71,7 +71,7 @@ La configuración experimental, ilustrada en la Figura 1, constaba de cuatro ele
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{figura1.png}
+    \includegraphics[width=0.8\linewidth]{montaje_experimental.png}
     \caption{Configuración experimental para el estudio de lentes delgadas}
     \label{fig:setup}
 \end{figure}
@@ -90,36 +90,46 @@ Este diseño experimental, cuidadosamente ejecutado, nos proporcionó los datos 
 
 \section{Resultados y discusión}
 
-En el transcurso de nuestro experimento, recopilamos un conjunto de datos que nos permitió verificar la ecuación de lentes delgadas y analizar la magnificación. La Tabla 1 presenta las mediciones realizadas para cinco configuraciones diferentes.
+La Tabla 1 presenta las mediciones realizadas para cuatro configuraciones diferentes.
 
 \begin{table}[h]
 \centering
-\caption{Mediciones experimentales y cálculos teóricos}
+\caption{Mediciones experimentales}
 \label{tab:mediciones}
 \begin{tabular}{|c|c|c|c|}
 \hline
-$s_o$ (cm) & $s_i$ (cm) & $$\Delta t$$ & $h_i$ (cm) \\
+$s_o$ (cm) & $s_i$ (cm) & $\Delta t$ (cm) & $h_i$ (cm) \\
 \hline
-12.5 & 33.5 & $$\pm$$ 1.5 & 2.79 $$\pm$$ 0.01  \\
-12.0 & 38.0 & $$\pm$$ 1.0 & 3.52 $$\pm$$ 0.01 \\
-11.5 & 43.5 & $$\pm$$ 0.8 & 4.28 $$\pm$$ 0.01 \\
-11.0 & 49.0 & $$\pm$$ 0.7 & 4.78 $$\pm$$ 0.01  \\
+12.5 & 33.5 & $\pm$ 1.5 & 2.79 $\pm$ 0.01 \\
+12.0 & 38.0 & $\pm$ 1.0 & 3.52 $\pm$ 0.01 \\
+11.5 & 43.5 & $\pm$ 0.8 & 4.28 $\pm$ 0.01 \\
+11.0 & 49.0 & $\pm$ 0.7 & 4.78 $\pm$ 0.01 \\
 \hline
 \end{tabular}
 \end{table}
 
-Donde $s_o$ es la distancia del objeto a la lente, $s_i$ es la distancia de la imagen a la lente, $h_o$ es la altura del objeto, $h_i$ es la altura de la imagen, $M_{exp}$ es la magnificación experimental calculada como $h_i/h_o$, y $M_{teo}$ es la magnificación teórica calculada usando la ecuación (2).
+Donde $s_o$ es la distancia del objeto a la lente, $s_i$ es la distancia de la imagen a la lente, $\Delta t$ es la incerteza total de la medición, y $h_i$ es la altura de la imagen.
 
-Al analizar estos datos, observamos una estrecha correlación entre los valores experimentales y teóricos. La distancia focal de la lente, calculada a partir de la pendiente de la gráfica de $1/s_o$ vs $1/s_i$, resultó ser de F ± ΔF cm. Este valor se encuentra dentro del rango de incertidumbre del valor nominal de la lente utilizada (F_nominal ± ΔF_nominal cm), lo que confirma la validez de la ecuación de lentes delgadas en nuestro experimento.
+Para verificar la validez de la ecuación de lentes delgadas (ecuación 1), se realizó un gráfico de $1/s_o$ vs $1/s_i$, como se muestra en la Figura 2.
 
-En cuanto a la magnificación, encontramos que los valores experimentales ($M_{exp}$) y teóricos ($M_{teo}$) presentan una discrepancia promedio del P%. Esta diferencia puede atribuirse a varios factores, incluyendo errores de medición, imperfecciones en la lente, y ligeras desviaciones de las condiciones ideales asumidas en la teoría. No obstante, considerando las incertidumbres experimentales, podemos afirmar que nuestros resultados respaldan la validez de la ecuación de magnificación.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{lens_equation_verification.png}
+    \caption{Gráfico de $1/s_o$ vs $1/s_i$ con ajuste lineal}
+    \label{fig:graph}
+\end{figure}
 
-Es importante destacar que en todas las configuraciones donde $s_o > f$, observamos imágenes invertidas, lo cual se refleja en los valores negativos de magnificación. Esto concuerda con las predicciones teóricas para lentes convergentes en estas condiciones.
+El ajuste lineal de estos datos produjo una recta con pendiente m = -0.867 $\pm$ 0.07 y ordenada al origen b = 0.0989 $\pm$ 0.07 cm$^{-1}$. Según la ecuación 1, la pendiente debería ser -1 y la ordenada al origen debería ser $1/f$, donde $f$ es la distancia focal de la lente.
 
-Estos resultados no solo validan las ecuaciones fundamentales de la óptica geométrica para lentes delgadas, sino que también subrayan la importancia de considerar las incertidumbres experimentales en la interpretación de datos físicos. Como señala Hecht \cite{hecht}, "las discrepancias menores entre la teoría y el experimento son esperables y pueden proporcionar información valiosa sobre las limitaciones de nuestros modelos y técnicas de medición".
+A partir de la ordenada al origen, podemos calcular la distancia focal de la lente:
 
-En resumen, nuestro experimento ha proporcionado evidencia sólida que respalda la aplicabilidad de la ecuación de lentes delgadas y la fórmula de magnificación en condiciones de laboratorio, al tiempo que ilustra los desafíos inherentes a la realización de mediciones precisas en sistemas ópticos reales.
+\begin{equation}
+f = \frac{1}{b} = \frac{1}{0.0989} = 10.11 \text{ cm} = 101 \text{ mm}
+\end{equation}
 
+Este valor de distancia focal es consistente con el valor nominal de 100 mm indicado para la lente utilizada en el experimento.
+
+La concordancia entre el valor calculado y el valor nominal de la lente proporciona una fuerte evidencia de la validez de la ecuación de lentes delgadas en nuestras condiciones experimentales. Además, demuestra la eficacia de nuestro método para determinar la distancia focal de una lente convergente utilizando mediciones de las distancias objeto-lente e imagen-lente.
 
 \section{Conclusiones}
 

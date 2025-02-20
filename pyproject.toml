@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "laboratorio"
+version = "0.1.0"
+description = ""
+authors = ["bridleiva <fisica.cn28c@slmail.me>"]
+license = "AGPL"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.2.3"
+scipy = "^1.15.2"
+matplotlib = "^3.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.32.0"
+numpy = "^2.2.3"
+matplotlib = "^3.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
