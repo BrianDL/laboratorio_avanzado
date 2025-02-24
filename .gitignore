@@ -12,3 +12,5 @@ devenv.local.nix
 *.pdf
 *.aux
 *.log
+*.bbl
+*.blg
