@@ -11,7 +11,6 @@
 \usepackage{cite}
 
 % Additional formatting for two-column layout with centered abstract
-\renewcommand{\absnamepos}{empty}  % Remove space where "Abstract" title was
 \addto{\captionsspanish}{\renewcommand{\abstractname}{}} % quitar título del resumen
 
 % Title information
@@ -45,7 +44,7 @@ La trayectoria de una partícula alfa al ser dispersada por un núcleo atómico 
 Basándose en estas observaciones, Rutherford desarrolló un modelo matemático para describir este fenómeno. En su análisis, consideró varios factores cruciales: la carga eléctrica del núcleo atómico, la trayectoria hiperbólica de las partículas alfa, y el principio de que la cantidad de partículas dispersadas a un ángulo Θ debe ser proporcional a la cantidad de partículas en el haz incidente. Integrando estos elementos, Rutherford logró deducir una expresión que predice la distribución angular de las partículas alfa dispersadas, sentando así las bases para una comprensión cuantitativa de la estructura atómica a nivel subatómico.
 
 \section{Diseño experimental}
-El diseño experimental de esta práctica se basa en una simulación sofisticada del experimento de dispersión de Rutherford. En este montaje virtual, se simula el lanzamiento de un haz de 10^8 partículas alfa hacia una lámina extremadamente delgada de oro. El haz, con un área transversal de 1 mm², está compuesto por partículas cuyas trayectorias son perfectamente paralelas, aunque sus posiciones dentro del haz se distribuyen aleatoriamente. Estas partículas alfa, cada una con una energía cinética de 5.5 MeV, inciden perpendicularmente sobre una lámina de oro de apenas 10^-6 m de espesor.
+El diseño experimental de esta práctica se basa en una simulación sofisticada del experimento de dispersión de Rutherford. En este montaje virtual, se simula el lanzamiento de un haz de $10^8$ partículas alfa hacia una lámina extremadamente delgada de oro. El haz, con un área transversal de $1 mm^2$, está compuesto por partículas cuyas trayectorias son perfectamente paralelas, aunque sus posiciones dentro del haz se distribuyen aleatoriamente. Estas partículas alfa, cada una con una energía cinética de 5.5 MeV, inciden perpendicularmente sobre una lámina de oro de apenas $10^{-6}$ m de espesor.
 
 La simulación considera meticulosamente las interacciones de cada partícula alfa con el material de la lámina de oro, determinando así la trayectoria resultante tras el impacto. Para cuantificar estas interacciones, se implementa un detector virtual capaz de contar el paso de las partículas alfa. Este detector, con un área efectiva de 4 cm², está diseñado para determinar cuántas de las partículas incidentes son dispersadas a un ángulo Θ respecto a la trayectoria original del haz.
 
@@ -62,7 +61,67 @@ Para profundizar en la interpretación cuantitativa de los datos, se realiza un 
 Finalmente, aprovechando la riqueza de los datos obtenidos mediante la simulación, se procede a estimar una cota superior para el radio del núcleo atómico. Esta estimación, basada en las características de la dispersión observada, proporciona una valiosa información sobre las dimensiones nucleares, contribuyendo así a nuestra comprensión de la estructura atómica a escala subatómica.
 
 \section{Resultados y discusión}
-Presenta los datos recopilados en el laboratorio y también los resultados que obtuvo de manera apropiada, describiendo la metodología y los procedimientos realizados. Además, discute cada uno de sus resultados obtenidos con una secuencia de ideas apropiada y de ser necesario cita de forma correcta para aportar evidencia en su discusión.
+
+Los datos recopilados en la simulación del experimento de Rutherford se presentan en la Tabla \ref{tab:rutherford_data}. Esta tabla muestra el número de partículas alfa detectadas (N) para diferentes ángulos de dispersión (\theta).
+
+\begin{table}[h]
+\centering
+\caption{Datos de dispersión de Rutherford}
+\label{tab:rutherford_data}
+\begin{tabular}{|c|c|}
+\hline
+\theta (grados) & N (partículas) \\
+\hline
+0 & 28198732 \\
+15 & 5267 \\
+30 & 333 \\
+45 & 44 \\
+60 & 28 \\
+75 & 8 \\
+90 & 2 \\
+105 & 3 \\
+120 & 6 \\
+135 & 2 \\
+\hline
+\end{tabular}
+\end{table}
+
+A continuación, analizaremos estos datos para evaluar la validez del modelo de Rutherford y estimar el tamaño del núcleo atómico.
+
+La Figura \ref{fig:rutherford_dispersion} muestra la representación gráfica de estos datos, utilizando una escala logarítmica para el número de partículas detectadas.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{rutherford_dispersion.png}
+\caption{Dispersión de Rutherford: Número de partículas detectadas en función del ángulo de dispersión.}
+\label{fig:rutherford_dispersion}
+\end{figure}
+
+El gráfico revela varios aspectos importantes del experimento de Rutherford:
+
+1. La mayoría de las partículas pasan a través de la lámina de oro sin ser desviadas significativamente, como se evidencia por el alto conteo a 0°.
+
+2. Se observa una disminución drástica en el número de partículas detectadas a medida que aumenta el ángulo de dispersión, lo cual es consistente con el modelo de Rutherford de un núcleo pequeño y denso.
+
+3. La presencia de partículas dispersadas en ángulos grandes (incluso a 135°) contradice el modelo atómico de Thomson, que predecía solo pequeñas desviaciones.
+
+4. La relación entre el ángulo de dispersión y el número de partículas detectadas sigue aproximadamente una función de la forma $N \propto \sin^{-4}(\theta/2)$, como predice el modelo de Rutherford.
+
+El alto número de partículas detectadas a un ángulo de 0° (28,198,732 partículas) tiene implicaciones significativas para nuestra comprensión de la estructura atómica:
+
+1. Transparencia del átomo: Este resultado indica que la gran mayoría de las partículas alfa atraviesan la lámina de oro sin sufrir desviaciones significativas. Esto sugiere que el átomo es en gran parte "vacío", con la mayor parte de su volumen permitiendo el paso libre de las partículas alfa.
+
+2. Incompatibilidad con el modelo de Thomson: El modelo del "pudín de pasas" propuesto por J.J. Thomson sugería una distribución uniforme de carga positiva en todo el volumen del átomo. Si este modelo fuera correcto, esperaríamos que la mayoría de las partículas alfa experimentaran pequeñas desviaciones al atravesar la lámina, resultando en una distribución más uniforme de ángulos de dispersión.
+
+3. Evidencia del núcleo atómico: La observación de que la mayoría de las partículas pasan sin desviación significativa, mientras que algunas experimentan grandes desviaciones (como se ve en ángulos mayores), es más consistente con la idea de un núcleo pequeño y denso. Esto apoya el modelo de Rutherford, donde la carga positiva está concentrada en un volumen muy pequeño en el centro del átomo.
+
+4. Validación del modelo de Rutherford: La combinación de muchas partículas sin desviación y algunas con grandes desviaciones es precisamente lo que predice el modelo de Rutherford. Esto proporciona una fuerte evidencia a favor de su modelo atómico y en contra del modelo de Thomson.
+
+En resumen, el alto conteo de partículas a 0° es incompatible con el modelo de Thomson de una masa de carga positiva uniforme. En cambio, este resultado apoya fuertemente el modelo de Rutherford de un átomo con un núcleo pequeño y denso, rodeado por un gran volumen de espacio mayormente vacío.
+
+Para cuantificar más precisamente la relación entre el ángulo de dispersión y el número de partículas detectadas, procedemos a realizar un ajuste de los datos a la función $N = k \sin^n (\theta/2)$, donde $k$ y $n$ son parámetros a determinar.
+
+% Aquí puedes añadir el código y los resultados del ajuste
 
 \section{Conclusiones}
 Concluye sobre los principales resultados obtenidos, teniendo en cuenta los objetivos de la práctica; además, cada una de las conclusiones manifiesta una secuencia de ideas apropiada.

@@ -15,6 +15,11 @@
     packages = with pkgs.texlive;
       [ "babel-spanish" ];
   };
+  
+  languages.python = {
+    enable = true;
+    poetry.enable = true;
+  };
 
   # https://devenv.sh/processes/
   # processes.cargo-watch.exec = "cargo-watch";
