@@ -13,7 +13,7 @@
   languages.texlive = {
     enable = true;
     packages = with pkgs.texlive;
-      [ "babel-spanish" ];
+      [ "babel-spanish" "abstract" "titling"];
   };
 
   # https://devenv.sh/processes/
