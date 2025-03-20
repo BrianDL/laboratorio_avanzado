@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{scrartcl}
+\documentclass[twocolumn,a4paper,11pt]{scrartcl}
 
 % Language and font encoding
 \usepackage[spanish,es-noshorthands]{babel}
@@ -10,27 +10,56 @@
 \usepackage{amsmath}
 \usepackage{cite}
 
+% Additional formatting for two-column layout with centered abstract
+\renewcommand{\absnamepos}{empty}  % Remove space where "Abstract" title was
+\addto{\captionsspanish}{\renewcommand{\abstractname}{}} % quitar título del resumen
+
 % Title information
-\title{Óptica Geométrica}
+\title{El experimento de Rutherford}
 \author{Nombre del Autor}
 \date{}
 
 \begin{document}
 
-\maketitle
-
-\begin{abstract}
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+    \begin{center}
+    \begin{minipage}{0.6\textwidth}
 Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
+\end{minipage}
+\end{center}
 \end{abstract}
+\end{@twocolumnfalse}
+]
 
 \section{Objetivos}
-Indica los principales objetivos de la práctica y están redactados de manera correcta.
+En este experimento examinamos la validez del modelo de Rutherford utilizando datos obtenidos a través de una simulación del experimento de dispersión de Rutherford. Mediante el análisis de estos datos simulados, buscamos corroborar las predicciones teóricas del modelo y evaluar su precisión en la descripción del comportamiento de las partículas alfa al interactuar con los núcleos atómicos. Adicionalmente, nos proponemos utilizar estos mismos datos simulados para estimar una cota superior del radio del núcleo atómico del oro. Esta estimación nos permitirá obtener una aproximación de las dimensiones nucleares, proporcionando así una valiosa información sobre la estructura atómica a escala subatómica. A través de estos objetivos, esperamos profundizar nuestra comprensión de los principios fundamentales de la física nuclear y la validez de los modelos teóricos en la descripción de fenómenos atómicos.
 
 \section{Marco teórico}
-Describe los conceptos, principios y ecuaciones importantes relacionados con la práctica, sin ser demasiado extenso. Además, las ecuaciones aparecen enumeradas y de ser necesario cita alguna información de otro(s) autor(es) que ayuden a comprender la teórica de la práctica.
+El modelo atómico propuesto por Ernest Rutherford revolucionó nuestra comprensión de la estructura atómica. En su innovadora teoría, Rutherford postuló que toda la carga positiva de un átomo se concentra en un núcleo extremadamente pequeño y denso. Este núcleo, a pesar de su diminuto tamaño, es responsable de la dispersión de las partículas alfa cuando estas se aproximan lo suficiente como para experimentar la repulsión de la fuerza de Coulomb.
+
+La trayectoria de una partícula alfa al ser dispersada por un núcleo atómico se puede visualizar como una curva hiperbólica. Inicialmente, la partícula se desplaza en una línea recta a una distancia 'b' de una trayectoria paralela que atraviesa el centro del núcleo. A medida que se acerca al núcleo, la partícula alfa alcanza un punto de máxima aproximación, a una distancia mínima 'r', antes de ser desviada. Esta desviación resulta en un cambio de dirección, formando un ángulo Θ con respecto a su trayectoria original.
+
+Basándose en estas observaciones, Rutherford desarrolló un modelo matemático para describir este fenómeno. En su análisis, consideró varios factores cruciales: la carga eléctrica del núcleo atómico, la trayectoria hiperbólica de las partículas alfa, y el principio de que la cantidad de partículas dispersadas a un ángulo Θ debe ser proporcional a la cantidad de partículas en el haz incidente. Integrando estos elementos, Rutherford logró deducir una expresión que predice la distribución angular de las partículas alfa dispersadas, sentando así las bases para una comprensión cuantitativa de la estructura atómica a nivel subatómico.
 
 \section{Diseño experimental}
-Especifica todo el equipo utilizado en la práctica de manera detallada; además, agrega una o más imágenes indicando el equipo usado y la forma en la que fue conectado para realizar el experimento.
+El diseño experimental de esta práctica se basa en una simulación sofisticada del experimento de dispersión de Rutherford. En este montaje virtual, se simula el lanzamiento de un haz de 10^8 partículas alfa hacia una lámina extremadamente delgada de oro. El haz, con un área transversal de 1 mm², está compuesto por partículas cuyas trayectorias son perfectamente paralelas, aunque sus posiciones dentro del haz se distribuyen aleatoriamente. Estas partículas alfa, cada una con una energía cinética de 5.5 MeV, inciden perpendicularmente sobre una lámina de oro de apenas 10^-6 m de espesor.
+
+La simulación considera meticulosamente las interacciones de cada partícula alfa con el material de la lámina de oro, determinando así la trayectoria resultante tras el impacto. Para cuantificar estas interacciones, se implementa un detector virtual capaz de contar el paso de las partículas alfa. Este detector, con un área efectiva de 4 cm², está diseñado para determinar cuántas de las partículas incidentes son dispersadas a un ángulo Θ respecto a la trayectoria original del haz.
+
+Una característica clave de este montaje experimental es la movilidad del detector. Este puede desplazarse sobre una trayectoria circular cuyo centro coincide con el punto de impacto del haz sobre la lámina de oro. La flexibilidad del sistema permite posicionar el detector en intervalos de 15° a lo largo de un arco que abarca desde 0° hasta 135° con respecto a la dirección original del haz. Esta configuración permite una medición precisa de la distribución angular de las partículas dispersadas, proporcionando así datos cruciales para la validación del modelo de Rutherford y la estimación de parámetros atómicos fundamentales.
+
+Para llevar a cabo el experimento, se sigue un procedimiento meticuloso que permite una recopilación y análisis exhaustivo de los datos. Inicialmente, se realizan múltiples mediciones para cada posición angular del detector, abarcando todo el rango de ángulos disponibles en el montaje experimental. Estas mediciones repetidas permiten estimar un valor medio robusto y cuantificar la incertidumbre asociada a cada punto de datos, garantizando así la fiabilidad de los resultados obtenidos.
+
+Una vez recopilados los datos, se procede a su representación gráfica, empleando una escala logarítmica para el conteo de partículas en el detector. Esta visualización logarítmica es crucial para revelar patrones y tendencias en la distribución angular de las partículas dispersadas, especialmente considerando el amplio rango de magnitudes involucradas en el experimento.
+
+El análisis de los resultados comienza con una evaluación crítica de las observaciones. Se presta especial atención al conteo de partículas a 0°, un dato que puede arrojar luz sobre la validez del modelo atómico de Thomson, que propone una distribución uniforme de carga positiva. Asimismo, se examina la presencia de partículas dispersadas en todos los ángulos, contrastando esta observación con las predicciones del modelo de Thomson.
+
+Para profundizar en la interpretación cuantitativa de los datos, se realiza un ajuste de los mismos a una función de la forma $I = k \sin^n (\Theta/2)$, donde $I$ representa la intensidad de partículas dispersadas, $\Theta$ el ángulo de dispersión, y $k$ y $n$ son parámetros a determinar. Este ajuste no solo permite cuantificar la relación entre el ángulo de dispersión y la intensidad de partículas, sino que también proporciona una medida de la calidad del ajuste, ofreciendo así una evaluación objetiva de la concordancia entre los datos experimentales y el modelo teórico propuesto.
+
+Finalmente, aprovechando la riqueza de los datos obtenidos mediante la simulación, se procede a estimar una cota superior para el radio del núcleo atómico. Esta estimación, basada en las características de la dispersión observada, proporciona una valiosa información sobre las dimensiones nucleares, contribuyendo así a nuestra comprensión de la estructura atómica a escala subatómica.
 
 \section{Resultados y discusión}
 Presenta los datos recopilados en el laboratorio y también los resultados que obtuvo de manera apropiada, describiendo la metodología y los procedimientos realizados. Además, discute cada uno de sus resultados obtenidos con una secuencia de ideas apropiada y de ser necesario cita de forma correcta para aportar evidencia en su discusión.
