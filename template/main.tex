@@ -10,18 +10,29 @@
 \usepackage{amsmath}
 \usepackage{cite}
 
+% Additional formatting for two-column layout with centered abstract
+\renewcommand{\absnamepos}{empty}  % Remove space where "Abstract" title was
+\addto{\captionsspanish}{\renewcommand{\abstractname}{}} % quitar título del resumen
+
 % Title information
-\title{Óptica Geométrica}
+\title{El experimento de Rutherford}
 \author{Nombre del Autor}
 \date{}
 
 \begin{document}
 
-\maketitle
-
-\begin{abstract}
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+    \begin{center}
+    \begin{minipage}{0.6\textwidth}
 Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
+\end{minipage}
+\end{center}
 \end{abstract}
+\end{@twocolumnfalse}
+]
 
 \section{Objetivos}
 Indica los principales objetivos de la práctica y están redactados de manera correcta.
