@@ -1,13 +1,13 @@
-# Set the output terminal (you can change this later if needed)
-set terminal pngcairo enhanced font "Arial,12" size 800,600
+# Set the output terminal
+set terminal pngcairo enhanced font "Arial,12" size 1200,1000
 
-# Set the default output file (you can change this later if needed)
-set output 'output.png'
+# Set the output file
+set output 'planck_constant_fits.png'
 
 # Set some general plot settings
-set title "Planck Constant Experiment Data"
-set xlabel "Voltaje de Frenado (V)"
-set ylabel "Corriente (A)"
+set title "Planck Constant Experiment Data and Fits"
+set xlabel "lc"
+set ylabel "V"
 set grid
 
 # Read data from files and store in variables
@@ -16,13 +16,6 @@ amarillo = "amarillo.dat"
 verde = "verde.dat"
 violeta = "violeta.dat"
 uv = "uv.dat"
-
-# Load the data into memory
-azul_data = azul using 3:1:4:2
-amarillo_data = amarillo using 3:1:4:2
-verde_data = verde using 3:1:4:2
-violeta_data = violeta using 3:1:4:2
-uv_data = uv using 3:1:4:2
 
 # Define colors for each dataset
 azul_color = "blue"
@@ -49,16 +42,48 @@ verde_freq = f(verde_wavelength)
 violeta_freq = f(violeta_wavelength)
 uv_freq = f(uv_wavelength)
 
-# Print frequencies (for verification)
-print sprintf("Frequencies (Hz): Azul=%.3e, Amarillo=%.3e, Verde=%.3e, Violeta=%.3e, UV=%.3e", \
-              azul_freq, amarillo_freq, verde_freq, violeta_freq, uv_freq)
+# Function for linear fit
+f(x) = m*x + b
 
-# Example plot command (commented out)
-# plot azul_data with xyerrorbars title "Azul" lc rgb azul_color, \
-#      amarillo_data with xyerrorbars title "Amarillo" lc rgb amarillo_color, \
-#      verde_data with xyerrorbars title "Verde" lc rgb verde_color, \
-#      violeta_data with xyerrorbars title "Violeta" lc rgb violeta_color, \
-#      uv_data with xyerrorbars title "UV" lc rgb uv_color
+# Perform fits and plot for each color
+set multiplot layout 3,2 title "Curvas de frenado para diferentes colores"
 
-# Notify that data is loaded
-print "Data loaded successfully. Use 'load_data.gp' in your main script to access the data."
+# Azul
+set title "Azul"
+fit f(x) azul using 3:1 via m,b
+plot azul using 3:1 with linespoints title "Data" lc rgb azul_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("Azul slope: %e", m)
+
+# Amarillo
+set title "Amarillo"
+fit f(x) amarillo using 3:1 via m,b
+plot amarillo using 3:1 with linespoints title "Data" lc rgb amarillo_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("Amarillo slope: %e", m)
+
+# Verde
+set title "Verde"
+fit f(x) verde using 3:1 via m,b
+plot verde using 3:1 with linespoints title "Data" lc rgb verde_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("Verde slope: %e", m)
+
+# Violeta
+set title "Violeta"
+fit f(x) violeta using 3:1 via m,b
+plot violeta using 3:1 with linespoints title "Data" lc rgb violeta_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("Violeta slope: %e", m)
+
+# UV
+set title "UV"
+fit f(x) uv using 3:1 via m,b
+plot uv using 3:1 with linespoints title "Data" lc rgb uv_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("UV slope: %e", m)
+
+unset multiplot
+
+# Notify that processing is complete
+print "Data processing and plotting complete. Check 'planck_constant_fits.png' for the output."
