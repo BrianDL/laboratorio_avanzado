@@ -6,8 +6,8 @@ set output 'planck_constant_fits.png'
 
 # Set some general plot settings
 set title "Planck Constant Experiment Data and Fits"
-set xlabel "lc"
-set ylabel "V"
+set xlabel "V1"
+set ylabel "V2"
 set grid
 
 # Read data from files and store in variables
@@ -50,36 +50,36 @@ set multiplot layout 3,2 title "Curvas de frenado para diferentes colores"
 
 # Azul
 set title "Azul"
-fit f(x) azul using 3:1 via m,b
-plot azul using 3:1 with linespoints title "Data" lc rgb azul_color, \
+fit f(x) azul using 1:3 via m,b
+plot azul using 1:3 with linespoints title "Data" lc rgb azul_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("Azul slope: %e", m)
 
 # Amarillo
 set title "Amarillo"
-fit f(x) amarillo using 3:1 via m,b
-plot amarillo using 3:1 with linespoints title "Data" lc rgb amarillo_color, \
+fit f(x) amarillo using 1:3 via m,b
+plot amarillo using 1:3 with linespoints title "Data" lc rgb amarillo_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("Amarillo slope: %e", m)
 
 # Verde
 set title "Verde"
-fit f(x) verde using 3:1 via m,b
-plot verde using 3:1 with linespoints title "Data" lc rgb verde_color, \
+fit f(x) verde using 1:3 via m,b
+plot verde using 1:3 with linespoints title "Data" lc rgb verde_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("Verde slope: %e", m)
 
 # Violeta
 set title "Violeta"
-fit f(x) violeta using 3:1 via m,b
-plot violeta using 3:1 with linespoints title "Data" lc rgb violeta_color, \
+fit f(x) violeta using 1:3 via m,b
+plot violeta using 1:3 with linespoints title "Data" lc rgb violeta_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("Violeta slope: %e", m)
 
 # UV
 set title "UV"
-fit f(x) uv using 3:1 via m,b
-plot uv using 3:1 with linespoints title "Data" lc rgb uv_color, \
+fit f(x) uv using 1:3 via m,b
+plot uv using 1:3 with linespoints title "Data" lc rgb uv_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("UV slope: %e", m)
 
