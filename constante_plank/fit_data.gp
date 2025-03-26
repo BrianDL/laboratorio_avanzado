@@ -11,49 +11,31 @@ set ylabel "V2"
 set grid
 
 # Read data from files and store in variables
-azul = "azul.dat"
 amarillo = "amarillo.dat"
 verde = "verde.dat"
+azul = "azul.dat"
 violeta = "violeta.dat"
 uv = "uv.dat"
 
 # Define colors for each dataset
-azul_color = "blue"
 amarillo_color = "yellow"
 verde_color = "green"
+azul_color = "blue"
 violeta_color = "violet"
 uv_color = "purple"
 
-# Function to calculate frequency from wavelength
-c = 299792458  # speed of light in m/s
-f(wavelength) = c / (wavelength * 1e-9)  # wavelength in nm
-
-# Define wavelengths for each color (in nm)
-azul_wavelength = 450
-amarillo_wavelength = 570
-verde_wavelength = 530
-violeta_wavelength = 400
-uv_wavelength = 380
-
-# Calculate frequencies
-azul_freq = f(azul_wavelength)
-amarillo_freq = f(amarillo_wavelength)
-verde_freq = f(verde_wavelength)
-violeta_freq = f(violeta_wavelength)
-uv_freq = f(uv_wavelength)
+# Color frequencies
+amarillo_freq = 519
+verde_freq = 549
+azul_freq = 688
+violeta_freq = 741
+uv_freq = 822
 
 # Function for linear fit
 f(x) = m*x + b
 
 # Perform fits and plot for each color
 set multiplot layout 3,2 title "Curvas de frenado para diferentes colores"
-
-# Azul
-set title "Azul"
-fit f(x) azul using 1:3 via m,b
-plot azul using 1:3 with linespoints title "Data" lc rgb azul_color, \
-     f(x) title "Fit" lc rgb "red"
-print sprintf("Azul slope: %e", m)
 
 # Amarillo
 set title "Amarillo"
@@ -69,6 +51,12 @@ plot verde using 1:3 with linespoints title "Data" lc rgb verde_color, \
      f(x) title "Fit" lc rgb "red"
 print sprintf("Verde slope: %e", m)
 
+# Azul
+set title "Azul"
+fit f(x) azul using 1:3 via m,b
+plot azul using 1:3 with linespoints title "Data" lc rgb azul_color, \
+     f(x) title "Fit" lc rgb "red"
+print sprintf("Azul slope: %e", m)
 # Violeta
 set title "Violeta"
 fit f(x) violeta using 1:3 via m,b
