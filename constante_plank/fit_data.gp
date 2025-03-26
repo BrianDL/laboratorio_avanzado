@@ -6,9 +6,8 @@ set output 'planck_constant_fits.png'
 
 # Set some general plot settings
 set title "Planck Constant Experiment Data and Fits"
-set xlabel "V1"
-set ylabel "V2"
 set grid
+set key off
 
 # Read data from files and store in variables
 amarillo = "amarillo.dat"
@@ -24,9 +23,8 @@ stats azul using 1:3 name "AZUL" nooutput
 stats violeta using 1:3 name "VIOLETA" nooutput
 stats uv using 1:3 name "UV" nooutput
 
-
 # Define colors for each dataset
-amarillo_color = "yellow"
+amarillo_color = "orange"
 verde_color = "green"
 azul_color = "blue"
 violeta_color = "violet"
@@ -48,62 +46,57 @@ set multiplot layout 3,2 title "Curvas de frenado para diferentes colores"
 # Amarillo
 set title "Amarillo"
 fit [-0.2:] f(x) amarillo using 1:3 via m,b 
-
-# Calculate 5% of the range for x and y
 x_margin = 0.05 * (AMARILLO_max_x - AMARILLO_min_x)
 y_margin = 0.05 * (AMARILLO_max_y - AMARILLO_min_y)
-
-# Set x and y ranges based on the amarillo dataset with 5% margin
 set xrange [AMARILLO_min_x - x_margin : AMARILLO_max_x + x_margin]
 set yrange [AMARILLO_min_y - y_margin : AMARILLO_max_y + y_margin]
-
-plot amarillo using 1:3 \
-     with linespoints title "Data" lc rgb amarillo_color \
-     , f(x) title "Fit" lc rgb "red"
+plot amarillo using 1:3 with linespoints lc rgb amarillo_color, \
+     f(x) lc rgb "red"
 print sprintf("Amarillo slope: %e", m)
-
-# Reset ranges to autoscale for the next plot
-set autoscale x
-set autoscale y
 
 # Verde
 set title "Verde"
 fit f(x) verde using 1:3 every ::14::16 via m,b
-set autoscale xfix
-set autoscale yfix
-plot verde using 1:3 with linespoints title "Data" lc rgb verde_color, \
-     f(x) title "Fit" lc rgb "red"
+x_margin = 0.05 * (VERDE_max_x - VERDE_min_x)
+y_margin = 0.05 * (VERDE_max_y - VERDE_min_y)
+set xrange [VERDE_min_x - x_margin : VERDE_max_x + x_margin]
+set yrange [VERDE_min_y - y_margin : VERDE_max_y + y_margin]
+plot verde using 1:3 with linespoints lc rgb verde_color, \
+     f(x) lc rgb "red"
 print sprintf("Verde slope: %e", m)
-set autoscale
 
 # Azul
 set title "Azul"
 fit f(x) azul using 1:3 every ::14::16 via m,b
-set autoscale xfix
-set autoscale yfix
-plot azul using 1:3 with linespoints title "Data" lc rgb azul_color, \
-     f(x) title "Fit" lc rgb "red"
+x_margin = 0.05 * (AZUL_max_x - AZUL_min_x)
+y_margin = 0.05 * (AZUL_max_y - AZUL_min_y)
+set xrange [AZUL_min_x - x_margin : AZUL_max_x + x_margin]
+set yrange [AZUL_min_y - y_margin : AZUL_max_y + y_margin]
+plot azul using 1:3 with linespoints lc rgb azul_color, \
+     f(x) lc rgb "red"
 print sprintf("Azul slope: %e", m)
-set autoscale
+
 # Violeta
 set title "Violeta"
 fit f(x) violeta using 1:3 every ::14::16 via m,b
-set autoscale xfix
-set autoscale yfix
-plot violeta using 1:3 with linespoints title "Data" lc rgb violeta_color, \
-     f(x) title "Fit" lc rgb "red"
+x_margin = 0.05 * (VIOLETA_max_x - VIOLETA_min_x)
+y_margin = 0.05 * (VIOLETA_max_y - VIOLETA_min_y)
+set xrange [VIOLETA_min_x - x_margin : VIOLETA_max_x + x_margin]
+set yrange [VIOLETA_min_y - y_margin : VIOLETA_max_y + y_margin]
+plot violeta using 1:3 with linespoints lc rgb violeta_color, \
+     f(x) lc rgb "red"
 print sprintf("Violeta slope: %e", m)
-set autoscale
 
 # UV
 set title "UV"
 fit f(x) uv using 1:3 every ::14::16 via m,b
-set autoscale xfix
-set autoscale yfix
-plot uv using 1:3 with linespoints title "Data" lc rgb uv_color, \
-     f(x) title "Fit" lc rgb "red"
+x_margin = 0.05 * (UV_max_x - UV_min_x)
+y_margin = 0.05 * (UV_max_y - UV_min_y)
+set xrange [UV_min_x - x_margin : UV_max_x + x_margin]
+set yrange [UV_min_y - y_margin : UV_max_y + y_margin]
+plot uv using 1:3 with linespoints lc rgb uv_color, \
+     f(x) lc rgb "red"
 print sprintf("UV slope: %e", m)
-set autoscale
 
 unset multiplot
 
