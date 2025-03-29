@@ -11,7 +11,7 @@ set ylabel 'Retardation Potential (V)'
 set grid
 
 # Define the linear function to fit
-f(x) = m*x - b
+f(x) = m*x + b
 
 # Perform the linear fit
 fit f(x) 'freq_and_vf.dat' using 1:2 via m, b
@@ -30,7 +30,7 @@ print sprintf("Slope = %.4e ± %.4e V/THz", m, m_err)
 print sprintf("Intercept = %.4f ± %.4f V", b, b_err)
 
 # Calculate Planck's constant
-h = m *  1.602176E-19  
+h = 1.602176E-19 * 1E-12 / m
 print sprintf("Planck's constant = %.4e ± %.4e J·s", h, h * m_err / abs(m))
 
 # Calculate work function
