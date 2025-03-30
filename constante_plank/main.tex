@@ -15,7 +15,7 @@
 \addto{\captionsspanish}{\renewcommand{\abstractname}{}} % quitar título del resumen
 
 % Title information
-\title{El experimento de Rutherford}
+\title{Constante de Planck}
 \author{Nombre del Autor}
 \date{}
 
@@ -27,7 +27,7 @@
     \begin{abstract}
         \begin{center}
         \begin{minipage}{0.6\textwidth}
-    Este trabajo presenta un estudio en el que determinamos experimentatalmente la constante de plank por medio del efecto fotoeléctrico. Utilizando una lámpara de mercurio y un montaje de detección fotoeléctrica, se midieron las corrientes generadas por electrones emitidos bajo la influencia de diferentes frecuencias de luz. Se aplicó un potencial de frenado permitiendo establecer una relación lineal entre el potencial de frenado y la frecuencia de los fotones incidentes. Los resultados obtenidos proporcionan un valor experimental de la constante de Planck que coincide con el valor teórico aceptado.
+    Este trabajo presenta un estudio en el que determinamos experimentatalmente la constante de Planck por medio del efecto fotoeléctrico. Utilizando una lámpara de mercurio y un montaje de detección fotoeléctrica, se midieron las corrientes generadas por electrones emitidos bajo la influencia de diferentes frecuencias de luz. Se aplicó un potencial de frenado permitiendo establecer una relación lineal entre el potencial de frenado y la frecuencia de los fotones incidentes. Los resultados obtenidos proporcionan un valor experimental de la constante de Planck que coincide con el valor teórico aceptado.
     \end{minipage}
     \end{center}
     \end{abstract}
@@ -75,103 +75,74 @@ Esta ecuación nos permite determinar la constante de Planck. Al graficar el pot
 
 \section{Diseño experimental}
 
-El montaje experimental para medir la constante de Planck utilizando el efecto fotoeléctrico se realizó siguiendo un esquema cuidadosamente diseñado, como se muestra en la Figura \ref{fig:montaje}. Este diseño permite una medición precisa de los fenómenos asociados con el efecto fotoeléctrico y, por ende, la determinación de la constante de Planck.
+El montaje experimental para medir la constante de Planck se muestra en la Figura \ref{fig:montaje}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{montaje_experimental.png}
+    \includegraphics[width=0.8\linewidth]{montaje_experimental_const_planck.png}
     \caption{Esquema del montaje experimental para medir la constante de Planck}
     \label{fig:montaje}
 \end{figure}
 
-En el corazón del experimento se encuentra una lámpara de mercurio de alta presión, que sirve como fuente de fotones. La luz emitida por esta lámpara se hace pasar a través de un prisma, que separa el haz en líneas de emisión discretas con frecuencias conocidas. Estas líneas de diferentes colores corresponden a las distintas transiciones electrónicas en los átomos de mercurio.
+Una lámpara de mercurio sirve como fuente de fotones. La luz emitida por esta lámpara se hace pasar a través de un prisma, que separa el haz en líneas de emisión discretas con frecuencias conocidas. Estas líneas de diferentes colores corresponden a las distintas transiciones electrónicas en los átomos de mercurio.
 
-Cada una de estas líneas espectrales se dirige, de manera individual y secuencial, hacia el cátodo de una fotocelda. Este proceso permite estudiar el efecto fotoeléctrico para diferentes frecuencias de luz incidente. La fotocelda, componente crucial del experimento, está conectada a un circuito que incluye un amplificador y una fuente de voltaje variable.
+Cada una de estas líneas espectrales se dirige, de manera individual y secuencial, hacia el cátodo de una fotocelda. Este proceso permite estudiar el efecto fotoeléctrico para diferentes frecuencias de luz incidente. La fotocelda está conectada a un circuito que incluye un amplificador y una fuente de voltaje variable.
 
-El amplificador juega un papel fundamental en la detección y medición de la pequeña corriente IC generada por el flujo de electrones desde el cátodo al ánodo de la fotocelda. Esta corriente, producto directo del efecto fotoeléctrico, se amplifica y se convierte en una señal de voltaje proporcional, facilitando su medición precisa.
+El amplificador permite la detección de la pequeña corriente $I_c$ generada por el flujo de electrones desde el cátodo al ánodo de la fotocelda. Esta corriente, producto directo del efecto fotoeléctrico, se amplifica y se convierte en una señal de voltaje proporcional, facilitando su medición precisa.
 
-La fuente de voltaje variable se utiliza para aplicar un potencial de frenado Vf entre el cátodo y el ánodo de la fotocelda. Este potencial de frenado es crucial para determinar la energía cinética máxima de los electrones emitidos, un parámetro clave en el cálculo de la constante de Planck.
+La fuente de voltaje variable se utiliza para aplicar un potencial de frenado $V_f$ entre el cátodo y el ánodo de la fotocelda. Este potencial de frenado permite determinar la energía cinética máxima de los electrones emitidos.
 
-Para realizar este experimento, se empleó el siguiente equipo especializado: un aparato para medir la constante de Planck LH 558 79, una lámpara de mercurio de alta presión LH 451 15, una fuente para lámparas de gases LH 451 30, un amplificador LH 532 20, una fuente de voltaje RIGOL DP832A, un osciloscopio RIGOL DS1054 y dos multímetros FLUKE 8845A.
+El procedimiento a seguir es:
 
-El procedimiento experimental detallado se describirá en la siguiente sección, donde se explicará paso a paso cómo se utilizó este equipo para obtener las mediciones necesarias para calcular la constante de Planck.
-
-Figura 2: Disposición de los componentes del montaje experimental
-Cables banana-banana en color negro y rojo.
-Cables coaxiales con terminales BNC.
-Adaptador de BNC a banana.
-En la figura 2 se muestra la disposición de los componentes para el montaje experimental. La
-separación de la luz de mercurio en colores se hace dentro del aparato para medir la constante de
-Plank. También dentro de este aparato se encuentra la fotocelda.
-La corriente IC proveniente del cátodo de la fotocelda se mide por medio del multı́metro V2 . El
-osciloscopio colocado en paralelo a este multı́metro sirve para determinar cuando esta corriente ya
-es estable y poder proceder con la medición de la misma.
-El multı́metro V1 mide el potencial de frenado Vf que se fija con la fuente de voltaje.
-Instrucciones de ejecución
-ADVERTENCIA: La lámpara de mercurio emite luz ultravioleta intensa. No observar direc-
-tamente.
-1. Montar el experimento como se muestra tanto en la figura 1 como la figura 2.
-2. Encender la lámpara de mercurio por medio de la fuente de esta. Esperar al menos 5 minutos
-a que esta caliente y alcance su máximo de emisión.
-3. Retirar la tapa de entrada de luz del aparato para medir la constante de Plank.
-4. Retirar el prisma de visión directa del aparato para medir la constante de Plank y enfocar
-una lı́nea bien definida en el colimador que se encuentra en la lente justo antes de la fotocelda.
-Puede utilizar una hoja de papel sobre el colimador para lograr esto.
-35. Colocar nuevamente el prisma de visión directa y verificar que todas las lı́nea de emisión
-puedan alcanzar la fotocelda por medio de rotar el espejo colocado en el aparato para medir
-la constante de Plank.
-6. Hacer incidir una de las lı́neas de la lámpara de mercurio en la fotocelda. Tomar nota del
-color que se hace incidir.
-7. Tapar la entrada de luz de la lámpara de mercurio y cerrar completamente el aparato para
-medir la constante de Plank.
-8. Encender el osciloscopio:
-a) Configurar el osciloscopio para un barrido temporal lento, en el rango de 100 ms a 500
-ms por división.
-b) Ajustar la escala vertical de voltaje en el rango de unos mV por división.
-9. Encender el multı́metro V2 .
-10. Encender el amplificador y colocar el selector en el máximo valor de amplificación para co-
-rriente. Tomar nota de este valor.
-11. Medir por medio del multı́metro V2 u el osciloscopio el voltaje de salida del amplificador.
-Ajustar por medio de la perilla de offset de la salida del amplificador, un valor lo mas cercano
-a cero posible.
-12. Configurar en el multı́metro V2 la función de análisis estadı́stico de este para tomar 200
-muestras.
-13. Realice por medio del multı́metro V2 la medición del valor de corriente cero.
-14. Encender la fuente de voltaje Vf y el multı́metro V1 .
-15. Configurar la salida de la fuente de voltaje para cero voltios.
-16. Configurar en el multı́metro V1 la función de análisis estadı́stico de este para tomar 100
-muestras.
-17. Destapar la entrada de luz de la lámpara de mercurio del aparato para medir la constante de
-Plank.
-18. Realizar mediciones del valor de corriente IC vs Vf para valores de Vf de 0 a -1.5 V en
-intervalos de 0.1 V, por medio del siguiente procedimiento:
-a) Configurar el valor deseado de potencial de frenado en la fuente de voltaje.
-b) Observar en el osciloscopio el comportamiento del voltaje de salida del amplificador.
-Cuando este sea estable se procede con las siguientes mediciones.
-c) Medir el valor de la corriente IC por medio del multı́metro V2 . Anotar el valor medio y
-la desviación.
-d ) Medir el valor del potencial de frenado por medio del voltı́metro V1 . Anotar el valor
-medio y la desviación.
-19. Repetir a partir del paso 6 para otro color, hasta tener las curvas IC vs Vf para al menos 4
-colores diferentes.
+\begin{enumerate}
+    \item Montar el experimento como se muestra en la figura 1.
+    \item Encender la lámpara de mercurio por medio de la fuente de esta. Esperar al menos 5 minutos a que esta caliente y alcance su máximo de emisión.
+    \item Retirar la tapa de entrada de luz del aparato para medir la constante de Planck.
+    \item Retirar el prisma de visión directa del aparato para medir la constante de Planck y enfocar una línea bien definida en el colimador que se encuentra en la lente justo antes de la fotocelda. Puede utilizar una hoja de papel sobre el colimador para lograr esto.
+    \item Colocar nuevamente el prisma de visión directa y verificar que todas las líneas de emisión puedan alcanzar la fotocelda por medio de rotar el espejo colocado en el aparato para medir la constante de Planck.
+    \item Hacer incidir una de las líneas de la lámpara de mercurio en la fotocelda. Tomar nota del color que se hace incidir.
+    \item Tapar la entrada de luz de la lámpara de mercurio y cerrar completamente el aparato para medir la constante de Planck.
+    \item Encender el osciloscopio:
+    \begin{enumerate}
+        \item Configurar el osciloscopio para un barrido temporal lento, en el rango de 100 ms a 500 ms por división.
+        \item Ajustar la escala vertical de voltaje en el rango de unos mV por división.
+    \end{enumerate}
+    \item Encender el multímetro V2.
+    \item Encender el amplificador y colocar el selector en el máximo valor de amplificación para corriente. Tomar nota de este valor.
+    \item Medir por medio del multímetro V2 y el osciloscopio el voltaje de salida del amplificador. Ajustar por medio de la perilla de offset de la salida del amplificador, un valor lo más cercano a cero posible.
+    \item Configurar en el multímetro V2 la función de análisis estadístico de este para tomar 200 muestras.
+    \item Realizar por medio del multímetro V2 la medición del valor de corriente cero.
+    \item Encender la fuente de voltaje Vf y el multímetro V1.
+    \item Configurar la salida de la fuente de voltaje para cero voltios.
+    \item Configurar en el multímetro V1 la función de análisis estadístico de este para tomar 100 muestras.
+    \item Destapar la entrada de luz de la lámpara de mercurio del aparato para medir la constante de Planck.
+    \item Realizar mediciones del valor de corriente IC vs Vf para valores de Vf de 0 a -1.5 V en intervalos de 0.1 V, por medio del siguiente procedimiento:
+    \begin{enumerate}
+        \item Configurar el valor deseado de potencial de frenado en la fuente de voltaje.
+        \item Observar en el osciloscopio el comportamiento del voltaje de salida del amplificador. Cuando este sea estable se procede con las siguientes mediciones.
+        \item Medir el valor de la corriente IC por medio del multímetro V2. Anotar el valor medio y la desviación.
+        \item Medir el valor del potencial de frenado por medio del voltímetro V1. Anotar el valor medio y la desviación.
+    \end{enumerate}
+    \item Repetir a partir del paso 6 para otro color, hasta tener las curvas IC vs Vf para al menos 4 colores diferentes.
+\end{enumerate}
 
 
 \section{Resultados y discusión}
 
-En esta sección, presentamos los resultados obtenidos durante el experimento, incluyendo gráficos y tablas que ilustran los datos recopilados y los análisis realizados.
-
 \subsection{Curvas de $I_C$ vs $V_f$ para diferentes colores}
 
-La Figura \ref{fig:ic_vs_vf} muestra las curvas de corriente $I_C$ en función del potencial de frenado $V_f$ para cuatro colores diferentes de luz incidente. Cada curva representa una longitud de onda específica de la lámpara de mercurio utilizada en el experimento.
+La Figura \ref{fig:ic_vs_vf} muestra las curvas de corriente $I_C$ en función del potencial de frenado $V_f$ para cinco colores diferentes de luz incidente. Cada curva representa una longitud de onda específica de la lámpara de mercurio utilizada en el experimento.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{ic_vs_vf.png}
-    \caption{Curvas de $I_C$ vs $V_f$ para diferentes colores de luz.}
+    \includegraphics[width=0.8\linewidth]{planck_constant_fits.png}
+    \caption{Curvas de $I_C$ vs $V_f$ para diferentes colores de luz, a escala de E-12.}
     \label{fig:ic_vs_vf}
 \end{figure}
 
-Estas curvas permiten observar cómo el potencial de frenado afecta la corriente de electrones emitidos, lo cual es crucial para determinar la energía cinética máxima de los electrones.
+Estas curvas permiten observar cómo el potencial de frenado afecta la corriente de electrones emitidos.
+
+Para determinar el potencial de frenado de cada color de luz utilizamos el método descrito por Melissinos \cite{melissinos1966} según el cual tomamos el ajuste lineal de cada una de las ramas y tomamos el potencial correspondiente a la intersección de los dos ajustes como el voltaje de frenado para cada color.
 
 \subsection{Datos de $V_f$ y frecuencia}
 
@@ -183,19 +154,20 @@ La Tabla \ref{tab:vf_frecuencia} presenta los valores de potencial de frenado $V
 \label{tab:vf_frecuencia}
 \begin{tabular}{|c|c|c|}
 \hline
-Color & $V_f$ (V) & Frecuencia (Hz) \\
+Color & Frecuencia (THz) & $|V_f|$ (V) \\
 \hline
-Rojo & -0.5 & $4.3 \times 10^{14}$ \\
-Verde & -0.8 & $5.5 \times 10^{14}$ \\
-Azul & -1.2 & $6.8 \times 10^{14}$ \\
-Violeta & -1.5 & $7.5 \times 10^{14}$ \\
+Amarillo & 519 & 0.1570 \\
+Verde & 549 & 0.2833 \\
+Azul & 688 & 0.5903 \\
+Violeta & 741 & 0.7058 \\
+UV & 822 & 0.8949 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsection{Ajuste de $V_f$ vs frecuencia}
 
-La Figura \ref{fig:vf_vs_frecuencia} muestra el ajuste lineal entre el potencial de frenado $V_f$ y la frecuencia de los fotones incidentes. Este ajuste es fundamental para determinar la constante de Planck.
+La Figura \ref{fig:vf_vs_frecuencia} muestra el ajuste lineal entre el potencial de frenado $V_f$ y la frecuencia de los fotones incidentes.
 
 \begin{figure}[h]
     \centering
@@ -212,7 +184,7 @@ Para determinar la constante de Planck, utilizamos la ecuación lineal obtenida 
 V_f = \left(\frac{h}{e}\right) \nu - \phi_A
 \end{equation}
 
-La pendiente de la línea ajustada nos proporciona el valor de $\frac{h}{e}$. Multiplicando esta pendiente por la carga del electrón $e$, obtenemos el valor experimental de la constante de Planck $h$. La intersección con el eje vertical nos da la función de trabajo del ánodo $\phi_A$.
+La pendiente de la línea ajustada nos proporciona el valor de $\frac{h}{e}$. Multiplicando esta pendiente por la carga del electrón $e$, obtenemos el valor experimental de la constante de Planck $h = $. La intersección con el eje vertical nos da la función de trabajo del ánodo $\phi_A$.
 
 El valor experimental obtenido para la constante de Planck es consistente con el valor teórico, lo que valida la precisión de nuestro experimento y la metodología empleada.
 

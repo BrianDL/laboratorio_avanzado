@@ -51,7 +51,7 @@ set multiplot layout 3,2 title "Curvas de frenado para diferentes colores"
 set title "Amarillo"
 fit [-0.1:] f_amarillo(x) amarillo using 1:3 via m_amarillo, b_amarillo
 f2_amarillo(x) = m2_amarillo*x + b2_amarillo
-fit [:-0.4] f2_amarillo(x) amarillo using 1:3 via m2_amarillo, b2_amarillo
+fit [:-1.3] f2_amarillo(x) amarillo using 1:3 via m2_amarillo, b2_amarillo
 x_margin = 0.05 * (AMARILLO_max_x - AMARILLO_min_x)
 y_margin = 0.05 * (AMARILLO_max_y - AMARILLO_min_y)
 set xrange [AMARILLO_min_x - x_margin : AMARILLO_max_x + x_margin]
@@ -67,9 +67,9 @@ print sprintf("Amarillo intersection point: (%e, %e)", amarillo_int_x, amarillo_
 
 # Verde
 set title "Verde"
-fit [-0.3:] f_verde(x) verde using 1:3 via m_verde, b_verde
+fit [-0.1:] f_verde(x) verde using 1:3 via m_verde, b_verde
 f2_verde(x) = m2_verde*x + b2_verde
-fit [:-0.5] f2_verde(x) verde using 1:3 via m2_verde, b2_verde
+fit [:-1.3] f2_verde(x) verde using 1:3 via m2_verde, b2_verde
 x_margin = 0.05 * (VERDE_max_x - VERDE_min_x)
 y_margin = 0.05 * (VERDE_max_y - VERDE_min_y)
 set xrange [VERDE_min_x - x_margin : VERDE_max_x + x_margin]
@@ -85,9 +85,9 @@ print sprintf("Verde intersection point: (%e, %e)", verde_int_x, verde_int_y)
 
 # Azul
 set title "Azul"
-fit [-0.5:] f_azul(x) azul using 1:3 via m_azul, b_azul
+fit [-0.1:] f_azul(x) azul using 1:3 via m_azul, b_azul
 f2_azul(x) = m2_azul*x + b2_azul
-fit [:-0.8] f2_azul(x) azul using 1:3 via m2_azul, b2_azul
+fit [:-1.3] f2_azul(x) azul using 1:3 via m2_azul, b2_azul
 x_margin = 0.05 * (AZUL_max_x - AZUL_min_x)
 y_margin = 0.05 * (AZUL_max_y - AZUL_min_y)
 set xrange [AZUL_min_x - x_margin : AZUL_max_x + x_margin]
@@ -103,9 +103,9 @@ print sprintf("Azul intersection point: (%e, %e)", azul_int_x, azul_int_y)
 
 # Violeta
 set title "Violeta"
-fit [-0.6:] f_violeta(x) violeta using 1:3 via m_violeta, b_violeta
+fit [-0.2:] f_violeta(x) violeta using 1:3 via m_violeta, b_violeta
 f2_violeta(x) = m2_violeta*x + b2_violeta
-fit [:-1.1] f2_violeta(x) violeta using 1:3 via m2_violeta, b2_violeta
+fit [:-1.3] f2_violeta(x) violeta using 1:3 via m2_violeta, b2_violeta
 x_margin = 0.05 * (VIOLETA_max_x - VIOLETA_min_x)
 y_margin = 0.05 * (VIOLETA_max_y - VIOLETA_min_y)
 set xrange [VIOLETA_min_x - x_margin : VIOLETA_max_x + x_margin]
@@ -121,9 +121,9 @@ print sprintf("Violeta intersection point: (%e, %e)", violeta_int_x, violeta_int
 
 # UV
 set title "UV"
-fit [-0.9:] f_uv(x) uv using 1:3 via m_uv, b_uv
+fit [-0.2:] f_uv(x) uv using 1:3 via m_uv, b_uv
 f2_uv(x) = m2_uv*x + b2_uv
-fit [:-1.4] f2_uv(x) uv using 1:3 via m2_uv, b2_uv
+fit [:-1.3] f2_uv(x) uv using 1:3 via m2_uv, b2_uv
 x_margin = 0.05 * (UV_max_x - UV_min_x)
 y_margin = 0.05 * (UV_max_y - UV_min_y)
 set xrange [UV_min_x - x_margin : UV_max_x + x_margin]
