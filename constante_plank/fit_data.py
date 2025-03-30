@@ -15,6 +15,9 @@ def fit_and_plot(ax, data, color, title):
     x, y = data[:, 0], data[:, 1]
 
     if title == 'Uv':
+        n_right = 7
+        n_left = 3
+    elif title == 'Violeta':
         n_right = 6
         n_left = 3
     elif title == 'Amarillo':
@@ -97,7 +100,7 @@ with open("freq_and_vf.dat", "w") as f:
 
 # Plot frequency vs. intersection voltage
 freq_array = np.array([freq for freq, _ in intersections])
-voltage_array = np.array([(int_x) for _, int_x in intersections])
+voltage_array = np.array([abs(int_x) for _, int_x in intersections])
 
 # Perform linear fit
 def linear_fit(x, m, b):
