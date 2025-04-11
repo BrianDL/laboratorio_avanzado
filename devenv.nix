@@ -16,10 +16,10 @@
       [ "babel-spanish" ];
   };
   
-  languages.python = {
-    enable = true;
-    poetry.enable = true;
-  };
+  #languages.python = {
+  #  enable = true;
+  #  poetry.enable = true;
+  #};
 
   # https://devenv.sh/processes/
   # processes.cargo-watch.exec = "cargo-watch";

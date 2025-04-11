@@ -44,19 +44,22 @@ def fit_and_plot(ax, data, color, title):
 
     # Plot
     ax.plot(x, y, 'o', color=color, label='Data')
-    ax.plot(x, linear(x, *popt_pos), 'r-', label='Positive fit')
-    ax.plot(x, linear(x, *popt_neg), 'gray', label='Negative fit')
+    ax.plot(x, linear(x, *popt_pos), 'r-', label='Rama positiva')
+    ax.plot(x, linear(x, *popt_neg), 'gray', label='Rama negativa')
     ax.set_title(title)
-    ax.set_xlabel('Voltage (V)')
-    ax.set_ylabel('Current (nA)')
+    ax.set_xlabel('V1')
+    ax.set_ylabel('v2')
     ax.legend()
+
+    # Show grid
+    ax.grid(True, linestyle='--', alpha=0.7)
 
     # Adjust limits to data only
     total_x = max(x) - min(x)
-    toatl_y = max(y) - min(y)
+    total_y = max(y) - min(y)
 
     ax.set_xlim(min(x) - total_x*0.05, max(x) + total_x*0.05)
-    ax.set_ylim(min(y) - toatl_y*0.05, max(y) + toatl_y*0.05)
+    ax.set_ylim(min(y) - total_y*0.05, max(y) + total_y*0.05)
     
     return intersection_x, intersection_y
 
