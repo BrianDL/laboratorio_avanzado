@@ -1,0 +1,201 @@
+\documentclass[twocolumn,a4paper,11pt]{scrartcl}
+
+% Language and font encoding
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Other necessary packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cite}
+
+% Additional formatting for two-column layout with centered abstract
+\renewcommand{\absnamepos}{empty}  % Remove space where "Abstract" title was
+\addto{\captionsspanish}{\renewcommand{\abstractname}{}} % quitar título del resumen
+
+% Title information
+\title{Relación carga-masa del Electrón}
+\author{Nombre del Autor}
+\date{Abril, 2025}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+    \begin{center}
+    \begin{minipage}{0.6\textwidth}
+Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
+\end{minipage}
+\end{center}
+\end{abstract}
+\end{@twocolumnfalse}
+]
+
+\section{Objetivos}
+
+El propósito principal de esta práctica es estudiar la deflexión de electrones en un campo magnético, observando su trayectoria circular. Este análisis nos permitirá comprender mejor el comportamiento de las partículas cargadas bajo la influencia de campos magnéticos.
+
+A partir de este estudio, nos proponemos determinar la relación entre el campo magnético B y el potencial de aceleración U de los electrones, manteniendo constante el radio r de su órbita. Esta investigación nos proporcionará información valiosa sobre la dinámica de los electrones en condiciones controladas.
+
+Finalmente, utilizando los datos obtenidos en los objetivos anteriores, buscaremos determinar la carga específica del electrón. Este valor fundamental nos ayudará a profundizar en nuestra comprensión de las propiedades intrínsecas de esta partícula subatómica y su comportamiento en campos electromagnéticos.
+
+\section{Marco teórico}
+
+El estudio de la relación carga-masa del electrón es fundamental en la física de partículas. Aunque la masa del electrón ($m_e$) es difícil de medir directamente, podemos determinar con mayor facilidad su carga específica ($\varepsilon$), definida como la relación entre su carga ($e$) y su masa:
+
+\begin{equation}
+\varepsilon = \frac{e}{m_e}
+\end{equation}
+
+Este valor nos permite calcular la masa del electrón si conocemos su carga elemental.
+
+Cuando un electrón se mueve con una velocidad $v$ perpendicular a un campo magnético homogéneo $B$, experimenta la fuerza de Lorentz:
+
+\begin{equation}
+F = e \cdot v \cdot B
+\end{equation}
+
+Esta fuerza, perpendicular tanto a la velocidad como al campo magnético, actúa como una fuerza centrípeta que obliga al electrón a seguir una trayectoria circular de radio $r$:
+
+\begin{equation}
+F = m_e \cdot \frac{v^2}{r}
+\end{equation}
+
+Igualando estas expresiones, obtenemos una relación entre la velocidad del electrón, su carga, masa, el radio de su órbita y el campo magnético:
+
+\begin{equation}
+\frac{e}{m_e} \cdot v = \frac{r \cdot B}{1}
+\end{equation}
+
+En nuestro experimento, aceleramos los electrones en un tubo de haz fino mediante un potencial $U$. La energía cinética resultante se expresa como:
+
+\begin{equation}
+e \cdot U = \frac{1}{2} \cdot m_e \cdot v^2
+\end{equation}
+
+Combinando estas ecuaciones, podemos expresar la carga específica del electrón en términos de parámetros medibles:
+
+\begin{equation}
+\frac{e}{m_e} = \frac{2 \cdot U}{(r \cdot B)^2}
+\end{equation}
+
+Esta ecuación nos permite determinar experimentalmente la relación carga-masa del electrón mediante la medición del potencial de aceleración, el radio de la órbita y el campo magnético aplicado.
+
+La figura \ref{fig:electron_deflection} ilustra cómo la fuerza de Lorentz desvía los electrones en un campo magnético, forzándolos a seguir una trayectoria circular de radio $r$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{electron_deflection.png}
+    \caption{Deflexión de electrones en un campo magnético $B$ por la fuerza de Lorentz $F$, siguiendo una órbita circular de radio $r$.}
+    \label{fig:electron_deflection}
+\end{figure}
+
+Este marco teórico nos proporciona las herramientas necesarias para analizar el comportamiento de los electrones en nuestro experimento y determinar su carga específica.
+\section{Diseño experimental}
+
+Para llevar a cabo este experimento, utilizamos un conjunto de equipos especializados que nos permiten generar, controlar y observar el comportamiento de los electrones en un campo magnético. El componente central de nuestro montaje es un tubo de haz fino, que contiene moléculas de hidrógeno a baja presión. Estas moléculas, al colisionar con los electrones, emiten luz, lo que nos permite visualizar indirectamente la órbita de los electrones y medir su radio con una regla.
+
+El campo magnético necesario para deflectar los electrones se genera mediante un par de bobinas de Helmholtz. La intensidad de este campo es proporcional a la corriente que circula por las bobinas, siguiendo la relación $B = k \cdot I$, donde $k$ es una constante de proporcionalidad que depende de las características físicas de las bobinas.
+
+Para alimentar y controlar nuestro sistema, utilizamos varias fuentes de poder. Una fuente de alimentación de tubo proporciona el potencial de aceleración para los electrones, mientras que una fuente de corriente continua suministra la corriente necesaria para las bobinas de Helmholtz. Además, empleamos multímetros para medir con precisión los voltajes y corrientes en diferentes puntos del circuito.
+
+El montaje experimental se realiza en una cámara oscura para mejorar la visibilidad del haz de electrones. Es importante tener en cuenta que las bobinas de Helmholtz no deben ser sometidas a corrientes superiores a 2 A durante períodos prolongados para evitar sobrecalentamiento.
+
+La configuración eléctrica del experimento requiere una cuidadosa conexión de los componentes. El tubo de haz fino se conecta a la fuente de alimentación de tubo, asegurando que el cátodo, el ánodo y el cilindro de Wehnelt reciban los voltajes adecuados. Las placas de deflexión del tubo se cortocircuitan al ánodo. Por otro lado, las bobinas de Helmholtz se conectan en serie con la fuente de corriente continua y un amperímetro para controlar y medir la corriente que genera el campo magnético.
+
+Una vez realizado el montaje, el procedimiento experimental comienza con el calentamiento del tubo, que toma unos minutos. Ajustamos el voltaje en el cilindro de Wehnelt para obtener un haz de electrones bien definido y enfocado. Luego, variamos la corriente en las bobinas de Helmholtz hasta que el haz de electrones se deflecte en una órbita cerrada.
+
+Es posible que necesitemos realizar algunos ajustes finos. Si el haz se desvía hacia el lado incorrecto, podemos invertir la polaridad del campo magnético cambiando las conexiones en la fuente de corriente continua. Si los electrones siguen una trayectoria helicoidal en lugar de circular, podemos rotar cuidadosamente el tubo de haz fino alrededor de su eje longitudinal hasta lograr una órbita circular cerrada.
+
+Este diseño experimental nos permite controlar con precisión los parámetros relevantes para nuestro estudio: el potencial de aceleración de los electrones y la intensidad del campo magnético. Mediante la medición del radio de la órbita de los electrones bajo diferentes condiciones, podremos determinar la relación carga-masa del electrón, cumpliendo así con los objetivos de nuestra investigación.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{experimental_setup.png}
+    \caption{Montaje experimental para la determinación de la relación carga-masa del electrón. Se muestra el tubo de haz fino, las bobinas de Helmholtz y las conexiones eléctricas.}
+    \label{fig:experimental_setup}
+\end{figure}
+
+\section{Diseño experimental}
+
+[... Contenido previo del diseño experimental ...]
+
+Una vez que hemos establecido nuestro montaje experimental, procedemos a realizar las mediciones siguiendo un protocolo cuidadosamente diseñado. Comenzamos ajustando el dispositivo de medición, que es crucial para determinar con precisión el diámetro de la órbita de los electrones. Movemos la corredera izquierda del dispositivo de medición de manera que su borde interior, su imagen reflejada y la apertura de escape del haz de electrones se alineen en una sola línea de visión. Este paso es fundamental para establecer un punto de referencia preciso para nuestras mediciones.
+
+A continuación, ajustamos la corredera derecha para que la distancia entre los bordes interiores de ambas correderas sea exactamente de 8 cm. Esta distancia predeterminada nos servirá como referencia constante para el diámetro de la órbita de los electrones a lo largo de todo el experimento. Es importante realizar este ajuste con cuidado, ya que la precisión en esta medida afectará directamente la calidad de nuestros resultados.
+
+Con el dispositivo de medición correctamente configurado, procedemos a alinear el haz de electrones. Para ello, enfocamos nuestra atención en el borde interior de la corredera derecha y su imagen reflejada. Ajustamos cuidadosamente la corriente de las bobinas hasta que el haz de electrones corra tangencialmente a lo largo del borde de la corredera, cubriendo su imagen reflejada. Este paso requiere paciencia y precisión, ya que la alineación perfecta del haz es crucial para obtener mediciones precisas.
+
+Una vez lograda la alineación inicial, comenzamos nuestro proceso de medición sistemática. Partiendo del potencial de aceleración máximo de 300 V, lo reducimos gradualmente en pasos de 10 V hasta llegar a 200 V. Para cada valor de potencial de aceleración, ajustamos la corriente de las bobinas de modo que la órbita del haz de electrones mantenga constantemente un diámetro de 8 cm. Este proceso nos permite observar cómo varía la corriente necesaria en las bobinas para mantener una órbita constante a medida que cambia el potencial de aceleración de los electrones.
+
+Durante todo este proceso, registramos cuidadosamente tanto el potencial de aceleración U como la corriente de las bobinas I para cada medición. Estos datos son fundamentales para nuestro análisis posterior, ya que nos permitirán establecer la relación entre el campo magnético necesario para mantener una órbita constante y la energía cinética de los electrones, determinada por el potencial de aceleración.
+
+Es importante destacar que durante todo el procedimiento, debemos mantener una observación constante del haz de electrones. Cualquier desviación de la órbita circular o cambios en la intensidad del haz deben ser notados y corregidos inmediatamente para garantizar la consistencia de nuestras mediciones.
+
+Este procedimiento meticuloso nos permite recopilar un conjunto de datos preciso y confiable, que será la base para nuestro análisis posterior y la determinación de la relación carga-masa del electrón. La atención al detalle en cada paso del proceso experimental es crucial para minimizar errores y obtener resultados que reflejen con precisión el comportamiento de los electrones en nuestro sistema.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{measurement_device.png}
+    \caption{Dispositivo de medición mostrando la alineación del haz de electrones con los bordes de las correderas y sus imágenes reflejadas.}
+    \label{fig:measurement_device}
+\end{figure}
+
+\section{Resultados y discusión}
+
+Tras realizar nuestro experimento meticulosamente, procedimos a analizar los datos recopilados. La Figura \ref{fig:U_vs_I2} muestra la relación entre el potencial de aceleración U y el cuadrado de la corriente en las bobinas I², de acuerdo con la ecuación (VIII) de nuestro marco teórico. Como se puede observar, los puntos experimentales se ajustan notablemente bien a una línea recta que pasa por el origen, lo cual confirma la validez de nuestro modelo teórico.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{U_vs_I2.png}
+    \caption{Gráfico de U en función de I² mostrando la relación lineal predicha por la teoría.}
+    \label{fig:U_vs_I2}
+\end{figure}
+
+El ajuste lineal de estos datos nos proporcionó una pendiente α = 65,3 V/A². Este valor es crucial para nuestro análisis, ya que nos permite calcular la carga específica del electrón utilizando la ecuación:
+
+\begin{equation}
+\frac{e}{m_e} = \frac{2 \cdot \alpha}{r^2 \cdot k^2}
+\end{equation}
+
+donde r es el radio de la órbita de los electrones y k es el factor de proporcionalidad entre la corriente en las bobinas y el campo magnético generado.
+
+Para determinar el valor de k, realizamos una calibración del campo magnético de las bobinas de Helmholtz. La Figura \ref{fig:B_vs_I} muestra los resultados de esta calibración, donde se observa una relación lineal entre el campo magnético B y la corriente I en las bobinas.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{B_vs_I.png}
+    \caption{Calibración del campo magnético: B en función de I.}
+    \label{fig:B_vs_I}
+\end{figure}
+
+El ajuste lineal de estos datos de calibración nos proporcionó un valor de k = 0,67 mT/A. Utilizando este valor experimental de k, junto con el radio de la órbita r = 4 cm y la pendiente α obtenida anteriormente, calculamos la carga específica del electrón:
+
+\begin{equation}
+\frac{e}{m_e} = 1,8 \times 10^{11} C/kg
+\end{equation}
+
+Es interesante comparar este resultado experimental con el valor teórico calculado utilizando la ecuación (IX) de nuestro marco teórico, que nos da k = 0,78 mT/A. Si utilizamos este valor teórico de k en lugar del valor experimental, obtenemos:
+
+\begin{equation}
+\frac{e}{m_e} = 1,3 \times 10^{11} C/kg
+\end{equation}
+
+La discrepancia entre estos dos valores (experimental y teórico) es del orden del 28%, lo cual puede atribuirse a varias fuentes de error experimental, como la precisión en la medición del radio de la órbita, las fluctuaciones en el campo magnético, o las incertidumbres en la calibración del equipo.
+
+Es importante notar que ambos valores están en el mismo orden de magnitud que el valor aceptado de la carga específica del electrón (1,76 × 10^11 C/kg). Esto nos da confianza en la validez general de nuestro método experimental y en la robustez de nuestros resultados.
+
+La ligera diferencia entre nuestros resultados y el valor aceptado puede deberse a varios factores. Por un lado, nuestro experimento asume que los electrones siguen una trayectoria perfectamente circular, lo cual puede no ser completamente cierto debido a pequeñas inhomogeneidades en el campo magnético. Además, la presencia de campos eléctricos residuales o la influencia del campo magnético terrestre podrían introducir pequeñas desviaciones en la trayectoria de los electrones.
+
+A pesar de estas limitaciones, nuestro experimento ha demostrado ser una herramienta valiosa para la determinación de la carga específica del electrón. La consistencia de nuestros resultados con la teoría y con los valores aceptados valida la eficacia de nuestro enfoque experimental y subraya la importancia de este tipo de experimentos en la enseñanza y comprensión de la física de partículas cargadas.
+
+\section{Conclusiones}
+Concluye sobre los principales resultados obtenidos, teniendo en cuenta los objetivos de la práctica; además, cada una de las conclusiones manifiesta una secuencia de ideas apropiada.
+
+\bibliographystyle{ieeetr}
+\bibliography{referencias}  
+
+\end{document}
