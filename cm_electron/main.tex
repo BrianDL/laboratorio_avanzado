@@ -94,8 +94,15 @@ La figura \ref{fig:electron_deflection} ilustra cómo la fuerza de Lorentz desv�
 \end{figure}
 
 Este marco teórico nos proporciona las herramientas necesarias para analizar el comportamiento de los electrones en nuestro experimento y determinar su carga específica.
+
 \section{Diseño experimental}
 
+\subsection*{Calibración del campo magnético}
+Inicialmente, se desconectan todas las unidades de suministro de energía, asegurando así la seguridad del equipo y la precisión de las mediciones. A continuación, se procede a retirar el dispositivo de medición y la bobina de Helmholtz ubicada en la parte frontal del montaje. Esto implica aflojar la conexión al tubo de haz fino y los pernos de fijación de los dos soportes. Se debe tener especial cuidado al retirar el tubo de haz fino, acomodándolo posteriormente en su estuche original para evitar daños. Una vez removidas estas piezas, se vuelve a armar la bobina de Helmholtz en la parte frontal y se restablece la conexión. 
+Luego, se conecta la sonda axial B al Teslametro (con un rango de medición de 20 mT) y se procede a calibrar el punto cero del instrumento. Posteriormente, se posiciona la sonda axial B de manera paralela al campo magnético generado por las bobinas de Helmholtz, situándola en el centro del par de bobinas. Finalmente, se incrementa la corriente en las bobinas (I) desde 0 hasta 3 amperios en incrementos de 0.5 amperios, midiendo el campo magnético resultante (B) en cada paso y registrando los valores obtenidos 4. Esto permite establecer la relación entre la corriente y el campo magnético.
+
+
+\subsection*{Determinando la relación de carga-masa del electrón}
 Para llevar a cabo este experimento, utilizamos un conjunto de equipos especializados que nos permiten generar, controlar y observar el comportamiento de los electrones en un campo magnético. El componente central de nuestro montaje es un tubo de haz fino, que contiene moléculas de hidrógeno a baja presión. Estas moléculas, al colisionar con los electrones, emiten luz, lo que nos permite visualizar indirectamente la órbita de los electrones y medir su radio con una regla.
 
 El campo magnético necesario para deflectar los electrones se genera mediante un par de bobinas de Helmholtz. La intensidad de este campo es proporcional a la corriente que circula por las bobinas, siguiendo la relación $B = k \cdot I$, donde $k$ es una constante de proporcionalidad que depende de las características físicas de las bobinas.
@@ -121,8 +128,6 @@ Este diseño experimental nos permite controlar con precisión los parámetros r
 
 \section{Diseño experimental}
 
-[... Contenido previo del diseño experimental ...]
-
 Una vez que hemos establecido nuestro montaje experimental, procedemos a realizar las mediciones siguiendo un protocolo cuidadosamente diseñado. Comenzamos ajustando el dispositivo de medición, que es crucial para determinar con precisión el diámetro de la órbita de los electrones. Movemos la corredera izquierda del dispositivo de medición de manera que su borde interior, su imagen reflejada y la apertura de escape del haz de electrones se alineen en una sola línea de visión. Este paso es fundamental para establecer un punto de referencia preciso para nuestras mediciones.
 
 A continuación, ajustamos la corredera derecha para que la distancia entre los bordes interiores de ambas correderas sea exactamente de 8 cm. Esta distancia predeterminada nos servirá como referencia constante para el diámetro de la órbita de los electrones a lo largo de todo el experimento. Es importante realizar este ajuste con cuidado, ya que la precisión en esta medida afectará directamente la calidad de nuestros resultados.
@@ -145,6 +150,31 @@ Este procedimiento meticuloso nos permite recopilar un conjunto de datos preciso
 \end{figure}
 
 \section{Resultados y discusión}
+\subsection*{Calibración del campo magnético}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |c| c | } 
+\hline
+Corriente (A) & Campo Magnético (mT) \\ 
+\hline
+0.00 & -0.042 $\pm$ 0.004 \\ 
+0.30 & 0.156 $\pm$ 0.002 \\ 
+0.60 & 0.367 $\pm$ 0.003 \\ 
+0.90 & 0.585 $\pm$ 0.002 \\ 
+1.20 & 0.794 $\pm$ 0.003 \\ 
+1.51 & 1.012 $\pm$ 0.003 \\ 
+1.80 & 1.218 $\pm$ 0.003 \\ 
+2.10 & 1.436 $\pm$ 0.003 \\ 
+2.40 & 1.653 $\pm$ 0.003 \\ 
+2.70 & 1.874 $\pm$ 0.002 \\ 
+3.00 & 2.083 $\pm$ 0.002 \\ 
+\hline
+\end{tabular}
+\caption{Campo magnético promedio (mT), sobre corriente (A)}
+\label{tabla:AT}
+\end{table}
+
 
 Tras realizar nuestro experimento meticulosamente, procedimos a analizar los datos recopilados. La Figura \ref{fig:U_vs_I2} muestra la relación entre el potencial de aceleración U y el cuadrado de la corriente en las bobinas I², de acuerdo con la ecuación (VIII) de nuestro marco teórico. Como se puede observar, los puntos experimentales se ajustan notablemente bien a una línea recta que pasa por el origen, lo cual confirma la validez de nuestro modelo teórico.
 
