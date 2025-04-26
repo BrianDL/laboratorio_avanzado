@@ -6,10 +6,6 @@ def linear(x, m, b):
     return m * x + b
 
 # Datos del experimento
-# corriente = np.array([0.00, 0.30, 0.60, 0.90, 1.20, 1.51, 1.80, 2.10, 2.40, 2.70, 3.00])  # Corriente en A
-# campo_magnetico = np.array([-0.042, 0.156, 0.367, 0.585, 0.794, 1.012, 1.218, 1.436, 1.653, 1.874, 2.083])  # Campo magnético en mT
-# error_campo_magnetico = np.array([0.004, 0.002, 0.003, 0.002, 0.003, 0.003, 0.003, 0.003, 0.003, 0.002, 0.002]) #Error del campo magnetico en mT
-
 ### get these three variables from a file named campo_magnetico.csv
 corriente, campo_magnetico, error_campo_magnetico = \
     np.loadtxt('cm_electron/campo_magnetico.csv'

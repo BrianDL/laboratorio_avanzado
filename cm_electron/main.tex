@@ -67,20 +67,42 @@ F = m_e \cdot \frac{v^2}{r}
 Igualando estas expresiones, obtenemos una relación entre la velocidad del electrón, su carga, masa, el radio de su órbita y el campo magnético:
 
 \begin{equation}
-\frac{e}{m_e} \cdot v = \frac{r \cdot B}{1}
+\frac{e}{m_e} = \frac{v}{r \cdot B}
 \end{equation}
 
-En nuestro experimento, aceleramos los electrones en un tubo de haz fino mediante un potencial $U$. La energía cinética resultante se expresa como:
+En el experimento, los electrones se aceleran en un tubo de rayos finos con potencial $U$. La energía cinética resultante es
 
 \begin{equation}
-e \cdot U = \frac{1}{2} \cdot m_e \cdot v^2
+    e \cdot U = \frac{1}{2} \cdot m_e \cdot v^2
 \end{equation}
 
-Combinando estas ecuaciones, podemos expresar la carga específica del electrón en términos de parámetros medibles:
+por lo que la carga específica del electrón es
 
 \begin{equation}
-\frac{e}{m_e} = \frac{2 \cdot U}{(r \cdot B)^2}
+\frac{e}{m_e} = 2 \frac{U}{(r \cdot B)^2}
 \end{equation}
+
+El tubo de haz fino contiene moléculas de hidrógeno a baja presión, que a través de colisiones con electrones son causadas a emitir luz. Esto hace que la órbita de los electrones sea visible indirectamente, y su radio de órbita r puede ser medido directamente con una regla.
+
+El campo magnético B es generado en un par de bobinas de Helmholtz y es proporcional a la corriente I en las bobinas de Helmholtz:
+
+\begin{equation}
+B = k \cdot I
+\end{equation}
+
+La dependencia del potencial de aceleración U de la corriente I, en el campo magnético del cual el radio de órbita de los electrones se mantiene a un valor constante r, se sigue tras reformular las ecuaciones (VI) y (VII):
+
+\begin{equation}
+U = \frac{e}{2} \cdot \frac{r^2 \cdot k \cdot I}{m_e}
+\end{equation}
+
+El factor de proporcionalidad
+\begin{equation}
+k = \mu_0 \cdot \left(\frac{4}{5}\right)^2 \frac{n}{R}
+\end{equation}
+donde $\mu_0 = 4\pi \cdot 10^{-7}$ (constante del campo magnético),
+puede ser calculado ya sea desde el radio de la bobina R = 150 mm y el factor de enrollamiento n = 130 por bobina, o ser determinado registrando una curva de calibración $B = f(I)$.
+
 
 Esta ecuación nos permite determinar experimentalmente la relación carga-masa del electrón mediante la medición del potencial de aceleración, el radio de la órbita y el campo magnético aplicado.
 
@@ -126,7 +148,7 @@ Este diseño experimental nos permite controlar con precisión los parámetros r
     \label{fig:experimental_setup}
 \end{figure}
 
-\section{Diseño experimental}
+\subsection*{Procedimiento}
 
 Una vez que hemos establecido nuestro montaje experimental, procedemos a realizar las mediciones siguiendo un protocolo cuidadosamente diseñado. Comenzamos ajustando el dispositivo de medición, que es crucial para determinar con precisión el diámetro de la órbita de los electrones. Movemos la corredera izquierda del dispositivo de medición de manera que su borde interior, su imagen reflejada y la apertura de escape del haz de electrones se alineen en una sola línea de visión. Este paso es fundamental para establecer un punto de referencia preciso para nuestras mediciones.
 
@@ -174,6 +196,11 @@ Corriente (A) & Campo Magnético (mT) \\
 \caption{Campo magnético promedio (mT), sobre corriente (A)}
 \label{tabla:AT}
 \end{table}
+
+
+Tras realizar un encaje lineal de los datos obtenidos y relacionarlo con la ecuación (7), obtenemos un valor de $k =  (7.13 \pm 0.58) E-04$.
+
+
 
 
 Tras realizar nuestro experimento meticulosamente, procedimos a analizar los datos recopilados. La Figura \ref{fig:U_vs_I2} muestra la relación entre el potencial de aceleración U y el cuadrado de la corriente en las bobinas I², de acuerdo con la ecuación (VIII) de nuestro marco teórico. Como se puede observar, los puntos experimentales se ajustan notablemente bien a una línea recta que pasa por el origen, lo cual confirma la validez de nuestro modelo teórico.
