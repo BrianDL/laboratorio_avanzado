@@ -64,27 +64,28 @@ Finalmente, aprovechando la riqueza de los datos obtenidos mediante la simulaci�
 
 Los datos recopilados en la simulación del experimento de Rutherford se presentan en la Tabla \ref{tab:rutherford_data}. Esta tabla muestra el número de partículas alfa detectadas (N) para diferentes ángulos de dispersión (\theta).
 
-\begin{table}[h]
-\centering
-\caption{Datos de dispersión de Rutherford}
-\label{tab:rutherford_data}
-\begin{tabular}{|c|c|}
-\hline
-\theta (grados) & N (partículas) \\
-\hline
-0 & 28198732 \\
-15 & 5267 \\
-30 & 333 \\
-45 & 44 \\
-60 & 28 \\
-75 & 8 \\
-90 & 2 \\
-105 & 3 \\
-120 & 6 \\
-135 & 2 \\
-\hline
-\end{tabular}
-\end{table}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{cccc}
+  \hline
+  angle & avg & stdev \\
+  \hline
+  0 & 28198524 & 6323 \\
+  15 & 5293 & 129 \\
+  30 & 295 & 14 \\
+  45 & 55 & 7 \\
+  60 & 23 & 3 \\
+  75 & 10 & 4 \\
+  90 & 3 & 2 \\
+  105 & 2 & 2 \\
+  120 & 2 & 2 \\
+  135 & 2 & 1 \\
+  \hline
+  \end{tabular}
+  \caption{Your Table Caption Here}
+  \label{tab:your_table}
+  \end{table}
+
 
 A continuación, analizaremos estos datos para evaluar la validez del modelo de Rutherford y estimar el tamaño del núcleo atómico.
 
@@ -92,7 +93,7 @@ La Figura \ref{fig:rutherford_dispersion} muestra la representación gráfica de
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{rutherford_dispersion.png}
+\includegraphics[width=0.8\textwidth]{data.png}
 \caption{Dispersión de Rutherford: Número de partículas detectadas en función del ángulo de dispersión.}
 \label{fig:rutherford_dispersion}
 \end{figure}
@@ -127,7 +128,7 @@ Utilizando un script de Python que emplea el método de mínimos cuadrados no li
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{rutherford_fit.png}
+\includegraphics[width=0.8\textwidth]{data_fit.png}
 \caption{Dispersión de Rutherford: Datos experimentales y curva de ajuste.}
 \label{fig:rutherford_fit}
 \end{figure}
