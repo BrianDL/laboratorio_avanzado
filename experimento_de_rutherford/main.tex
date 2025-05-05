@@ -17,10 +17,11 @@
 
 % Title information
 \title{El experimento de Rutherford}
-\author{Nombre del Autor}
-\date{}
+\author{Brian D. Leiva. ECFM-USAC}
+\date{Mayo 2025}
 
 \begin{document}
+
 
 \twocolumn[
   \begin{@twocolumnfalse}
@@ -28,11 +29,12 @@
     \begin{abstract}
     \begin{center}
     \begin{minipage}{0.6\textwidth}
-Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
-\end{minipage}
-\end{center}
-\end{abstract}
-\end{@twocolumnfalse}
+
+    En este trabajo presentamos una descripción detallada del experimento de dispersión de Rutherford por medio de una simulación de partículas alpha colisionando con una hoja delgada de oro. Describimos las ecuaciones que rigen la dispersión de partículas alfa y calculamos una cota superior para el átomo de oro.
+    \end{minipage}
+    \end{center}
+    \end{abstract}
+  \end{@twocolumnfalse}
 ]
 
 \section{Objetivos}
@@ -52,7 +54,7 @@ La simulación considera meticulosamente las interacciones de cada partícula al
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\textwidth]{simulador.png}
+    \includegraphics[width=0.5\textwidth]{simulador.png}
     \caption{Simulador del experimento de Rutherford.}
     \label{fig:simulador}
 \end{figure}
@@ -104,7 +106,7 @@ La Figura \ref{fig:rutherford_dispersion} muestra la representación gráfica de
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\textwidth]{data.png}
+\includegraphics[width=0.5\textwidth]{data.png}
 \caption{Dispersión de Rutherford: Número de partículas detectadas en función del ángulo de dispersión.}
 \label{fig:rutherford_dispersion}
 \end{figure}
@@ -123,7 +125,7 @@ Utilizando el script de Python llamado graficar\_fit.py en el repositorio del pr
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\textwidth]{data_fit.png}
+\includegraphics[width=0.5\textwidth]{data_fit.png}
 \caption{Dispersión de Rutherford: Datos experimentales y curva de ajuste.}
 \label{fig:rutherford_fit}
 \end{figure}
@@ -147,9 +149,9 @@ Tomando los valores en SI:
   \item $\theta = 134$
 \end{itemize}
 
-El valor obtenido para $r_{max}$ es 8.31E-14 m lo cual podemos contrastar con el valor conocido de 7.3E-15 m. La diferencia se debe a que las partículas alpha no son lo suficientemente energéticas como para acercarse más al núcleo.
+El valor obtenido para $r_{max}$ es 8.31E-14 m lo cual podemos contrastar con el valor conocido de 7.3E-15 m. La diferencia se debe a que las partículas alpha no son lo suficientemente energéticas como para acercarse más al núcleo \cite{Wikipedia_Rutherford}.
 
-Los detalles de las conversiones y la aritmética se se encuentran en la hoja de cálculo \cite{HojaCalculo}.
+Los detalles de las conversiones y la aritmética se se encuentran en la hoja de cálculo de este experimento \cite{HojaCalculo}.
 
 
 \section{Conclusiones}
