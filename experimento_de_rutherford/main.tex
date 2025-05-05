@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{cite}
+\usepackage{url}
 \usepackage{hyperref}
 
 % Additional formatting for two-column layout with centered abstract
@@ -142,13 +143,41 @@ El ajuste proporcionó los siguientes valores para los parámetros:
     \item $R^2 = 0.9997$
 \end{itemize}
 
-El valor obtenido para el exponente $n$ es muy cercano a 4, lo cual es consistente con la predicción teórica del modelo de Rutherford, que sugiere una dependencia de $\sin^{-4}(\theta/2)$ para la intensidad de las partículas dispersadas.
+\subsection*{Calculo del radio máximo del átomo}
+La cota superior para el radio máximo del átomo está dada por la distancia de máximo acercamiento \cite{Wikipedia_Rutherford}:
 
-El alto valor del coeficiente de determinación $R^2$ (0.9997) indica que el ajuste es excelente, lo que significa que la función propuesta describe muy bien los datos experimentales. Esto proporciona una fuerte evidencia a favor del modelo de Rutherford y su predicción sobre la distribución angular de las partículas alfa dispersadas.
 
-Es importante notar que el punto correspondiente a 0° se excluyó del ajuste debido a que la función tiende a infinito en ese punto. Sin embargo, como se discutió anteriormente, este punto es crucial para entender la naturaleza "vacía" del átomo y la concentración de la carga positiva en un núcleo pequeño.
+\[
+\frac{1}{2}mv^2 = k\frac{q_a q_g}{r_{\text{min}}}
+\]
 
-La calidad del ajuste y la concordancia del exponente con la predicción teórica refuerzan la validez del modelo de Rutherford y proporcionan una fuerte evidencia experimental de la estructura nuclear del átomo.
+donde:
+
+\begin{itemize}
+    \item $m$ es la masa de la partícula alfa.
+    \item $v$ es la velocidad inicial de la partícula alfa.
+    \item $q_a$ es la carga de la partícula alfa.
+    \item $q_g$ es la carga del núcleo (oro en el ejemplo).
+    \item $k = \frac{1}{4\pi\epsilon_0}$ es la constante de Coulomb.
+\end{itemize}
+
+Resolviendo para $r_{\text{min}}$ se obtiene:
+
+\[
+r_{\text{min}} = k\frac{2q_a q_g}{mv^2}
+\]
+
+El valor calculado de $r_{\text{min}}$ sirve como una estimación del límite superior para el radio nuclear, con valores típicos alrededor de $10^{-14}$ metros.
+Para una partícula alfa, se utilizan los siguientes valores:
+
+\begin{itemize}
+    \item $m$ (masa) = $6.64424 \times 10^{-27}$ kg = $3.7273 \times 10^9$ eV/c$^2$
+    \item $q_a$ (para la partícula alfa) = $2 \times 1.6 \times 10^{-19}$ C = $3.2 \times 10^{-19}$ C
+    \item $q_g$ (para el oro) = $79 \times 1.6 \times 10^{-19}$ C = $1.27 \times 10^{-17}$ C
+    \item $v$ (velocidad inicial) = $2 \times 10^7$ m/s (para este ejemplo)
+\end{itemize}
+
+Sustituyendo estos valores en la ecuación se obtiene un resultado para $r_{\text{min}}$ de aproximadamente $2.7 \times 10^{-14}$ m, o 27 fm (femtómetros). Esta distancia calculada proporciona una estimación del límite superior para el radio nuclear del átomo de oro.
 
 \section{Conclusiones}
 Concluye sobre los principales resultados obtenidos, teniendo en cuenta los objetivos de la práctica; además, cada una de las conclusiones manifiesta una secuencia de ideas apropiada.
