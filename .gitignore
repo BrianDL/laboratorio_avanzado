@@ -14,3 +14,4 @@ devenv.local.nix
 *.log
 *.bbl
 *.blg
+*.out
