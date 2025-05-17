@@ -28,7 +28,7 @@ def plot_energy_vs_count(csv_file, output_dir="rayos_gamma"):
         # 3. Graficación
         plt.figure(figsize=(10, 6))  # Ajustar el tamaño de la figura
         plt.scatter(energia, conteo, label="Datos", marker='o', s=5) # Graficar los puntos de datos
-        # plt.yscale('log')
+        plt.yscale('log')
 
         plt.xlabel("Energía (keV)")  # Etiqueta del eje x en español
         plt.ylabel("Conteo")  # Etiqueta del eje y en español
