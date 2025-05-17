@@ -51,14 +51,77 @@ Describe los conceptos, principios y ecuaciones importantes relacionados con la 
 \section{Diseño experimental}
 \section{Calibración en Energía}
 
-El primer paso en la calibración energética implica visualizar los datos adquiridos. Creamos un gráfico de canal vs. conteos utilizando los datos obtenidos del espectro de $^{152}$Eu. Este gráfico proporciona una representación directa de la distribución de la señal a través de los canales del detector.  Posteriormente, comparamos este gráfico generado con el espectro de referencia representado en la Figura 1. Construimos una tabla que liste sistemáticamente los canales correspondientes a los conteos máximos de cada pico de energía observado en la Figura 1. Notamos cuidadosamente que los conteos en el espectro de referencia (Figura 1) se presentan en una escala logarítmica, lo cual debe considerarse durante esta comparación.  A continuación, realizamos un análisis de correlación lineal sobre los datos tabulados en la tabla construida anteriormente. Finalmente, reproducimos el gráfico del espectro de $^{152}$Eu, pero esta vez mostrando la energía en el eje x y los conteos en el eje y, permitiendo una visualización directa de la forma espectral en el espacio de energía.
+\begin{figure}[]
+  \includegraphics[width=0.45\textwidth]{espectro_de_referencia.png}
+  \caption{Espectro de referencia del Eu-152.}
+  \label{fig:eu152_ref}
+\end{figure}
+
+
+El primer paso en la calibración energética implica visualizar los datos adquiridos. Creamos un gráfico de canal vs. conteos utilizando los datos obtenidos del espectro de $^{152}$Eu. Este gráfico proporciona una representación directa de la distribución de la señal a través de los canales del detector.  Posteriormente, comparamos este gráfico generado con el espectro de referencia representado en la Figura \ref{fig:eu152_ref}. Construimos una tabla que liste sistemáticamente los canales correspondientes a los conteos máximos de cada pico de energía observado en la Figura 1. Notamos cuidadosamente que los conteos en el espectro de referencia (Figura 1) se presentan en una escala logarítmica, lo cual debe considerarse durante esta comparación.  A continuación, realizamos un análisis de correlación lineal sobre los datos tabulados en la tabla construida anteriormente. Finalmente, reproducimos el gráfico del espectro de $^{152}$Eu, pero esta vez mostrando la energía en el eje x y los conteos en el eje y, permitiendo una visualización directa de la forma espectral en el espacio de energía.
 
 \section{Energía del Pico del $^{137}$Cs}
 
 Una vez establecida la calibración energética, procedemos a analizar el espectro de $^{137}$Cs. Generamos un gráfico de energía vs. conteos utilizando los datos del espectro de $^{137}$Cs, aplicando la calibración determinada previamente. Después de crear el gráfico, identificamos el pico correspondiente a la señal de $^{137}$Cs. Determinamos con precisión el valor de energía en el punto máximo del pico. Verificamos que esta energía medida coincida estrechamente con la energía conocida del fotón gamma emitido por $^{137}$Cs como se describe en la Figura 2. Para evaluar el rendimiento del sistema de detección de radiación ionizante, calculamos el Ancho Total a Media Altura (FWHM). El FWHM, una medida estándar de la resolución del detector, representa el ancho del pico a la mitad de su altura máxima y se especifica típicamente a una energía dada. Calculamos el FWHM para el pico de $^{137}$Cs para cuantificar la capacidad del detector para resolver características espectrales estrechamente espaciadas.
 
 \section{Resultados y discusión}
-Presenta los datos recopilados en el laboratorio y también los resultados que obtuvo de manera apropiada, describiendo la metodología y los procedimientos realizados. Además, discute cada uno de sus resultados obtenidos con una secuencia de ideas apropiada y de ser necesario cita de forma correcta para aportar evidencia en su discusión.
+
+\begin{figure}[]
+  \includegraphics[width=0.45\textwidth]{Eu-152_graph.png}
+  \caption{Gráfico del espectro de Eu-152.}
+  \label{fig:eu152_graph}
+\end{figure}
+
+\subsection*{Calibración de la Energía}
+Para calibrar la energía comenzamos por graficar el conteo (en una escala logarítmica) contra el canal de los datos proporcionados para el Eu-152. Encontramos los máximos segmentando los datos en de manera que cada segmento contenga sólo un máximo y luego simplemente tomando función máximo de python, proceso que implementamos en la función find\_local\_maxima del archivo rayos\_gamma/calibrar\_energia.py del repositorio del laboratorio \cite{BrianDL_laboratorio}. El resultado se puede ver en la figura \ref{fig:eu152_graph}.
+
+Luego procedemos a comparar los máximos encontrados con la figura proporcionada \ref{fig:eu152_ref}, lo cual nos permite construir la tabla \ref{tab:channels_energies} que relaciona el canal con su energía respectiva.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c}
+      \hline
+      Canal & Energía (KeV) \\
+      \hline
+      78 & 122 \\
+      148 & 245 \\
+      207 & 344 \\
+      450 & 779 \\
+      564 & 964 \\
+      637 & 1112 \\
+      802 & 1408 \\
+      \hline
+  \end{tabular}
+  \caption{Canales y sus energías correspondientes.}
+  \label{tab:channels_energies}
+\end{table}
+
+Luego procedimos a realizar un encaje lineal entre la energía y el canal correspondiente de acuerdo a la ecuación $E = mc +b$ el cual nos permite encontrar la relación entre ambas variables. El encaje se realiza en el script rayos\_gamma/encaje\_energia.py, el cual nos produce también la figura \ref{fig:energia_canal_graph} donde podemos apreciar también la línea de encaje y los respectivos valores para $m = 1.77$ y $b = -19.73$.
+
+\begin{figure}[]
+  \includegraphics[width=0.45\textwidth]{energy_vs_canal.png}
+  \caption{Energía contra canal de datos.}
+  \label{fig:energia_canal_graph}
+\end{figure}
+
+Utilizando estos resultados podemos obtener ahora el gráfico del conteo sobre la energía, como se muestra en la figura \ref{fig:energia_conteo_graph} 
+
+\begin{figure}[]
+  \includegraphics[width=0.45\textwidth]{energia_vs_conteo_eu-152.png}
+  \caption{Energía contra conteo.}
+  \label{fig:energia_conteo_graph}
+\end{figure}
+
+\subsection*{Energía del Pico de $^{137}Cs$}
+
+\begin{figure}[]
+  \includegraphics[width=0.45\textwidth]{plot_cs137.png}
+  \caption{Espectro del $^{137}Cs$.}
+  \label{fig:espectro_cs}
+\end{figure}
+
+Los valores encontrados para $m, b$ nos permiten también encontrar el máximo de energía para el espectro del $^{137}Cs$. El cual procedemos a graficar en la figura \ref{fig:espectro_cs}. Donde podemos observar el máximo encontrado para la energía $E= 0.678$ MeV. Lo cual concuerda con el valor esperado de 0.679 MeV.
+
 
 
 \section{Conclusiones}
