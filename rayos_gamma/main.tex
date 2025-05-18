@@ -18,8 +18,8 @@
 
 % Title information
 \title{Espectro de Radiación Gamma}
-\author{Nombre del Autor}
-\date{}
+\author{Brian D. Leiva. ECFM-USAC}
+\date{Mayo 2025}
 
 \begin{document}
 
@@ -29,7 +29,9 @@
     \begin{abstract}
     \begin{center}
     \begin{minipage}{0.6\textwidth}
-      Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
+      
+        Presentamos un estudio experimental sobre el espectro de radiación gamma proveniente de fuentes radiactivas de $^{137}$Cs y $^{152}$Eu. El objetivo principal fue observar y caracterizar los espectros de energía, calibrar el sistema de adquisición de datos utilizando el espectro de $^{152}$Eu y verificar la energía del pico de $^{137}$Cs.  Se determinó una relación lineal entre el canal de conteo y la energía, permitiendo la conversión precisa de lecturas del detector a valores de energía.  El análisis del espectro de $^{137}$Cs confirmó la energía esperada del pico gamma (aproximadamente 662 keV) y se calculó el Ancho a Mitad de la Altura Máxima (FWHM) del pico, obteniendo un valor de 104.6 keV.
+        
     \end{minipage}
     \end{center}
     \end{abstract}
@@ -46,7 +48,37 @@
 4. Obtener un indicador de la resolución en energı́a del sistema de detección a 662 KeV.
 
 \section{Marco teórico}
-Describe los conceptos, principios y ecuaciones importantes relacionados con la práctica, sin ser demasiado extenso. Además, las ecuaciones aparecen enumeradas y de ser necesario cita alguna información de otro(s) autor(es) que ayuden a comprender la teórica de la práctica.
+\subsection*{Perfiles del Espectro de Energía}
+
+Los perfiles del espectro de energía, también conocidos como espectros de energía o funciones de distribución de energía (FDE), son representaciones gráficas que ilustran la distribución de la energía dentro de un sistema, típicamente en función de la frecuencia o la longitud de onda.  Suelen ser visualizados como histogramas o curvas suaves.  La información que proporcionan es crucial para comprender las propiedades físicas y el comportamiento del sistema bajo estudio \cite{Martin2010}.
+
+
+\subsection*{Desintegración Radiactiva}
+
+La desintegración radiactiva es un proceso espontáneo por el cual un núcleo atómico inestable pierde energía, generalmente en forma de radiación, para transformarse en un núcleo más estable.  Existen varios tipos de desintegración, incluyendo la desintegración alfa (emisión de partículas alfa, ⁴He), la desintegración beta (emisión de electrones o positrones y neutrinos/antineutrinos) y la emisión gamma (emisión de fotones de alta energía).
+
+El europio-152 (Eu-152) es un isótopo radiactivo del europio que se desintegra principalmente por desintegración beta menos ($\beta^-$). Este proceso implica la conversión de un neutrón dentro del núcleo en un protón, un electrón ($\beta^-$) y un antineutrino ($\bar \nu _e$). La ecuación general de la desintegración es:
+\begin{equation}
+^{152}_{63}Eu \rightarrow ^{152}_{64}Gd + e^- + \bar{\nu}_e
+\end{equation}
+
+\paragraph{Cs-137: Desintegración Beta Menos y Emisión Gamma}
+
+El cesio-137 (Cs-137) es otro isótopo radiactivo importante, resultado de las pruebas nucleares atmosféricas y la fisión nuclear en reactores. También se desintegra por desintegración beta menos:
+
+\begin{equation}
+^{137}_{55}Cs \rightarrow ^{137}_{56}Ba + e^- + \bar{\nu}_e
+\end{equation}
+
+Transformándose en bario-137 (Ba-137), emitiendo un electrón y un antineutrino.  Al igual que el Eu-152, el Ba-137 resultante suele estar excitado y decae al estado fundamental emitiendo un fotón gamma de 662 keV \ref{fig:decaimiento_cs}.
+
+\subsection*{Ancho a Mitad de la Altura Máxima (FWHM)}
+
+El Ancho a Mitad de la Altura Máxima, comúnmente conocido por sus siglas FWHM (del inglés Full Width at Half Maximum), es una medida estándar utilizada para caracterizar el ancho de un pico en una curva o espectro. Es particularmente relevante en espectroscopía, análisis de señales y otras áreas donde se observan distribuciones de frecuencia o energía.
+
+\paragraph{Definición y Cálculo}
+
+El FWHM se define como el ancho de la curva medido en el punto donde la intensidad o amplitud alcanza la mitad de su valor máximo. Para calcularlo, se encuentra la altura máxima del pico ($y_{max}$), se determina la mitad de esa altura ($y_{max}/2$), y luego se identifican los dos puntos en la curva donde la intensidad es igual a $y_{max}/2$. La distancia horizontal entre estos dos puntos constituye el FWHM \cite{WikipediaFWHM}.
 
 \section{Diseño experimental}
 \subsection*{Calibración en Energía}
@@ -58,7 +90,7 @@ Describe los conceptos, principios y ecuaciones importantes relacionados con la 
 \end{figure}
 
 
-El primer paso en la calibración energética implica visualizar los datos adquiridos. Creamos un gráfico de canal vs. conteos utilizando los datos obtenidos del espectro de $^{152}$Eu. Este gráfico proporciona una representación directa de la distribución de la señal a través de los canales del detector.  Posteriormente, comparamos este gráfico generado con el espectro de referencia representado en la Figura \ref{fig:eu152_ref}. Construimos una tabla que liste sistemáticamente los canales correspondientes a los conteos máximos de cada pico de energía observado en la Figura 1. Notamos cuidadosamente que los conteos en el espectro de referencia (Figura 1) se presentan en una escala logarítmica, lo cual debe considerarse durante esta comparación.  A continuación, realizamos un análisis de correlación lineal sobre los datos tabulados en la tabla construida anteriormente. Finalmente, reproducimos el gráfico del espectro de $^{152}$Eu, pero esta vez mostrando la energía en el eje x y los conteos en el eje y, permitiendo una visualización directa de la forma espectral en el espacio de energía.
+El primer paso en la calibración energética implica visualizar los datos adquiridos. Creamos un gráfico de canal vs. conteos utilizando los datos obtenidos del espectro de $^{152}$Eu. Este gráfico proporciona una representación directa de la distribución de la señal a través de los canales del detector.  Posteriormente, comparamos este gráfico generado con el espectro de referencia representado en la Figura \ref{fig:eu152_ref}. Construimos una tabla que liste sistemáticamente los canales correspondientes a los conteos máximos de cada pico de energía observado en la Figura \ref{eu152_ref}. A continuación, realizamos un análisis de correlación lineal sobre los datos tabulados en la tabla construida anteriormente. Finalmente, reproducimos el gráfico del espectro de $^{152}$Eu, pero esta vez mostrando la energía en el eje x y los conteos en el eje y, permitiendo una visualización directa de la forma espectral en el espacio de energía.
 
 \subsection*{Energía del Pico del $^{137}$Cs}
 
@@ -69,7 +101,7 @@ El primer paso en la calibración energética implica visualizar los datos adqui
   \label{fig:decaimiento_cs}
 \end{figure}
 
-Una vez establecida la calibración energética, procedemos a analizar el espectro de $^{137}$Cs. Generamos un gráfico de energía vs. conteos utilizando los datos del espectro de $^{137}$Cs, aplicando la calibración determinada previamente. Después de crear el gráfico, identificamos el pico correspondiente a la señal de $^{137}$Cs. Determinamos con precisión el valor de energía en el punto máximo del pico. Verificamos que esta energía medida coincida estrechamente con la energía conocida del fotón gamma emitido por $^{137}$Cs como se describe en la Figura \ref{fig:decaimiento_cs}. Para evaluar el rendimiento del sistema de detección de radiación ionizante, calculamos el Ancho Total a Media Altura (FWHM). El FWHM, una medida estándar de la resolución del detector, representa el ancho del pico a la mitad de su altura máxima y se especifica típicamente a una energía dada. Calculamos el FWHM para el pico de $^{137}$Cs para cuantificar la capacidad del detector para resolver características espectrales estrechamente espaciadas.
+Una vez establecida la calibración de la energía, procedemos a analizar el espectro de $^{137}$Cs. Generamos un gráfico de energía vs. conteos utilizando los datos del espectro de $^{137}$Cs, aplicando la calibración determinada previamente. Después de crear el gráfico, identificamos el pico correspondiente a la señal de $^{137}$Cs. Determinamos con precisión el valor de energía en el punto máximo del pico. Verificamos que esta energía medida coincida estrechamente con la energía conocida del fotón gamma emitido por $^{137}$Cs como se describe en la Figura \ref{fig:decaimiento_cs}. Para evaluar el rendimiento del sistema de detección de radiación ionizante, calculamos el Ancho Total a Media Altura (FWHM). El FWHM, una medida estándar de la resolución del detector, representa el ancho del pico a la mitad de su altura máxima y se especifica típicamente a una energía dada. Calculamos el FWHM para el pico de $^{137}$Cs para cuantificar la capacidad del detector para resolver características espectrales estrechamente espaciadas.
 
 \section{Resultados y discusión}
 
@@ -121,7 +153,7 @@ Utilizando estos resultados podemos obtener ahora el gráfico del conteo sobre l
 
 \subsection*{Energía del Pico de $^{137}Cs$}
 
-\begin{figure}[]
+\begin{figure}[h]
   \includegraphics[width=0.50\textwidth]{plot_cs137.png}
   \caption{Espectro del $^{137}Cs$.}
   \label{fig:espectro_cs}
