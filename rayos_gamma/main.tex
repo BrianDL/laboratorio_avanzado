@@ -161,7 +161,7 @@ Utilizando estos resultados podemos obtener ahora el gráfico del conteo sobre l
 
 Los valores encontrados para $m, b$ nos permiten también encontrar el máximo de energía para el espectro del $^{137}Cs$. El cual procedemos a graficar en la figura \ref{fig:espectro_cs}. Donde podemos observar el máximo encontrado para la energía $E= 0.678$ MeV. Lo cual concuerda bastante bien con el valor esperado de 0.66 MeV \ref{fig:decaimiento_cs}.
 Para encontrar el máximo conteo según la energía procedimos a tomar la función max de python después de filtrar las energías y tomar sólo el rango (550,750), los cuales visualmente podemos verificar que contienen sólo el máximo que nos interesa.
-La figura \ref{fig:espectro_cs} también nos muestra nuestro cálculo de fwhm = 104.6 KeV \cite{Martin2010} el cual calculamos realizando un encaje cuadrático a la data en la región de energías mencionadas (550,750) y luego restando la distancia entre los dos intersectos de este encaje con la recta horizontal a media altura del máximo. El código para calcular el máximo, el fwhm y graficarlos se encuentra en graficar\_conteo\_vs\_energia\_cs.py
+La figura \ref{fig:espectro_cs} también nos muestra nuestro cálculo de fwhm = 104.6 KeV \cite{Martin2010} el cual calculamos realizando un encaje cuadrático a los datos en la región de energías mencionadas (550,750) y luego restando la distancia entre los dos intersectos de este encaje con la recta horizontal a media altura del máximo. El código para calcular el máximo, el fwhm y graficarlos se encuentra en graficar\_conteo\_vs\_energia\_cs.py
 
 \section{Conclusiones}
 
