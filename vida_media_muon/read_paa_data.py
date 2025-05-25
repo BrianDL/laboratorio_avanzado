@@ -22,7 +22,10 @@ def process_paa_files(data_dir, csv_filename):
     
     with open(csv_filename, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(['file_number', 'pulse_number', 'time_difference']) # Write header
+        csv_writer.writerow( # header
+            ['file_number', 'pulse_number'
+            , 'time_difference', 'threshold']
+            )
 
         for paa_file_path in paa_files:
             try:
@@ -38,29 +41,41 @@ def process_paa_files(data_dir, csv_filename):
                     current_min_idx = None
                     for idx,val in enumerate(pulse_data_v):
                         if current_min is None:
-                            if val <= threshold: 
+                            if val < threshold: 
                                 current_min = val
                                 current_min_idx = idx
+                                
+                                threshold = min(0.5*val, threshold)
+
                             continue
                         
-                        if val > threshold:
-                            triggers.append(current_min_idx)
-                            threshold = 0.5*current_min
-                            # print("NEW_TRESHOLD:", threshold)
-                            current_min = None
-                            current_min_idx = None
+                        if val < threshold:
+                            if val < current_min:
+                                current_min = val
+                                current_min_idx = idx
+                                
+                                threshold = min(0.5*val, threshold)
+                            
                             continue
+
+                        triggers.append({
+                            'value': val
+                            , 'index': current_min_idx
+                            , 'trsh': threshold
+                        })
+
+                        current_min = None
+                        current_min_idx = None
                         
-                        # if we are still below threshold, update current min
-                        if val < current_min:
-                            current_min = val
-                            current_min_idx = idx
 
                     if len(triggers) >= 2:
                         # Calculate time difference between the first two triggers
-                        time_difference = triggers[1] - triggers[0]
+                        time_difference = triggers[1]['index'] - triggers[0]['index']
                         time_difference_scaled = time_difference * 8 # Multiply by 8
-                        csv_writer.writerow([file_number, pulse_number, time_difference_scaled])
+                        csv_writer.writerow(
+                            [file_number, pulse_number
+                            , time_difference_scaled
+                            , triggers[0]['trsh']])
 
             except Exception as e:
                 print(f"Error processing file {paa_file_path}: {e}")
