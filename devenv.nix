@@ -16,11 +16,6 @@
       [ "babel-spanish" ];
   };
   
-  #languages.python = {
-  #  enable = true;
-  #  poetry.enable = true;
-  #};
-
   # https://devenv.sh/processes/
   # processes.cargo-watch.exec = "cargo-watch";
 
@@ -58,6 +53,10 @@
   enterTest = ''
     echo "Running tests"
     git --version | grep --color=auto "${pkgs.git.version}"
+  '';
+
+  enterShell = ''
+  	poetry shell
   '';
 
   # https://devenv.sh/pre-commit-hooks/
