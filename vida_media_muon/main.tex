@@ -19,8 +19,8 @@
 
 % Title information
 \title{Vida Media del Muón}
-\author{Nombre del Autor}
-\date{}
+\author{Brian D. Leiva. ECFM-USAC}
+\date{Mayo 2025}
 
 \begin{document}
 
@@ -28,12 +28,12 @@
   \begin{@twocolumnfalse}
     \maketitle
     \begin{abstract}
-    \begin{center}
-    \begin{minipage}{0.6\textwidth}
-Describe de manera concisa el trabajo realizado en la práctica, indicando qué se hizo, cómo se hizo y a qué resultados se llegó.
-\end{minipage}
-\end{center}
-\end{abstract}
+      \begin{center}
+      \begin{minipage}{0.6\textwidth}
+  En esta práctica se determinó experimentalmente la vida media del muón a partir del análisis de datos recolectados en un detector de radiación Cherenkov. Se procesaron archivos de datos PAA para identificar pulsos con picos dobles, permitiendo la construcción de un histograma de tiempos de decaimiento.  Se aplicó un ajuste exponencial a los datos del histograma, obteniendo una vida media de  $\tau = 2.18 \pm 0.2 \mu s$, valor consistente con el valor aceptado de $2.20 \mu s$.
+  \end{minipage}
+  \end{center}
+  \end{abstract}
 \end{@twocolumnfalse}
 ]
 
@@ -90,7 +90,7 @@ Al encontrar un punto que con valor menor que el umbral configurado, de -150, re
   \label{fig:histograma}
 \end{figure}
 
-Con los datos contenidos en picos\_dobles.csv construímos un histograma (en microsegundos) al cual le realizamos un encaje lineal con la función $$Ae^{-t/\tau} + C$$ \ref{eq:exponencial} donde $\tau$ es la vida media y C es ruido de radiación de fondo que pueda afectar al sensor. El resultado se muestra en la figura \ref{fig:histograma} conde podemos ver el histograma para el cual utilizamos un binado de 15 y obtuvimos un valor para la vida media de $\tau =  2.18 \pm 0.2 \mu s$ lo cual está de acuerdo con el valor aceptado de $2.20 \mu s$. Los detalles de cómo realizar el encaje se encuenran en el script vida\_media\_muon/plot\_histogram.py.
+Con los datos contenidos en picos\_dobles.csv construímos un histograma (en microsegundos) al cual le realizamos un encaje lineal con la función $$Ae^{-t/\tau} + C$$ \ref{eq:exponencial} donde $\tau$ es la vida media y C es ruido de radiación de fondo que pueda afectar al sensor. El resultado se muestra en la figura \ref{fig:histograma} donde podemos ver el histograma para el cual utilizamos un binado de 15 y obtuvimos un valor para la vida media de $\tau =  2.18 \pm 0.2 \mu s$ lo cual está de acuerdo con el valor aceptado de $2.20 \mu s$. Los detalles de cómo realizar el encaje se encuenran en el script vida\_media\_muon/plot\_histogram.py.
 
 \section{Conclusiones}
 
